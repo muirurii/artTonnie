@@ -3,12 +3,12 @@ const cta = document.querySelector('.cta');
 const introText = `This world is but a, canvas to our, imagination.`;
 
 const withSpan = [...introText].map((letter, index) => {
-    return `<span class='opacity-0 ${letter === " " || letter === "," ? "" : "inline-block"} transform -translate-x-2 -translate-y-6' style='animation: text 400ms linear forwards; animation-delay:${
+    return `<span class='opacity-0 ${letter === " " || letter === "," ? "" : "inline-block"} transform -translate-x-2 translate-y-6' style='animation: text 400ms linear forwards; animation-delay:${
     index * 40
   }ms;'>${letter === "," ? "</br>" : letter === "" ? "&nbsp;" : letter}</span>`;
 });
 
-cta.style.animationDelay = `${withSpan.length * 40 + 400}ms`;
+cta.style.animationDelay = `${withSpan.length * 40 + 600}ms`;
 
 setTimeout(() => {
     introTextCont.innerHTML = withSpan.join("");

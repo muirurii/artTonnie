@@ -4,6 +4,7 @@
 @layer base {
     html {
         scroll-behavior: smooth;
+        @apply scroll-pt-20;
     }
 }
 
@@ -19,7 +20,9 @@
         animation: text 400ms forwards;
     }
     .cta {
-        animation: text 400ms forwards;
+        @apply transition-colors;
+        @apply duration-300;
+        animation: text 400ms 500s forwards;
     }
     header::before {
         --l: attr(data-scroll);
@@ -33,9 +36,10 @@
         @apply text-white;
     }
     .show-big-img {
-        display: flex;
+        @apply h-screen;
+        @apply top-0;
     }
-    .image-view.flex.fixed .zoom-out {
+    .show-big-img .zoom-out {
         @apply transform-none;
     }
 }
