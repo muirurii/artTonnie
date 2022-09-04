@@ -9,6 +9,67 @@
 }
 
 @layer utilities {
+    .loaded .body {
+        @apply block;
+    }
+    .loaded .loader {
+        display: none;
+    }
+    .load {
+        width: 8px;
+        height: 40px;
+        border-radius: 4px;
+        display: block;
+        margin: 20px auto;
+        position: relative;
+        background: currentColor;
+        color: #FFF;
+        box-sizing: border-box;
+        animation: animloader 0.3s 0.3s linear infinite alternate;
+    }
+    .load::after,
+    .load::before {
+        content: '';
+        width: 8px;
+        height: 40px;
+        border-radius: 4px;
+        background: currentColor;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+        animation: animloader 0.3s 0.45s linear infinite alternate;
+    }
+    .load::before {
+        left: -20px;
+        animation-delay: 0s;
+    }
+    @keyframes animloader {
+        0% {
+            height: 48px
+        }
+        100% {
+            height: 4px
+        }
+    }
+    .hero-text span {
+        animation: text 500ms forwards;
+    }
+    .menu {
+        clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+    }
+    .menu.show-menu {
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    }
+    .menu.show-menu li {
+        @apply transform-none;
+    }
+    .open-menu .btn-1 {
+        @apply hidden;
+    }
+    .open-menu .btn-2 {
+        @apply block;
+    }
     @keyframes text {
         to {
             @apply opacity-100;
@@ -20,9 +81,7 @@
         animation: text 400ms forwards;
     }
     .cta {
-        /* @apply transition-colors; */
-        /* @apply duration-300; */
-        animation: 400ms forwards;
+        animation: text 400ms 800ms forwards;
     }
     header::before {
         --l: attr(data-scroll);

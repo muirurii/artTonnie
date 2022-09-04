@@ -1,11 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./src/**/*.{html,js},", "./*.html"],
+    content: ["./*.html", "./src/**/*.{html,js},"],
     theme: {
         extend: {
             fontFamily: {
                 main: ["Plus Jakarta Sans", "sans-serif"],
                 hero: ["Bebas Neue", "sans-serif"]
+            },
+            fontSize: {
+                hero: "clamp(4rem, 6vw, 6rem)",
+            },
+            height: {
+                hero: "clamp(4rem, 9vw, 6rem)",
             },
             width: {
                 header: "calc(100vw - 20%)"

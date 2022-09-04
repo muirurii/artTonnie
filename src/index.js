@@ -1,110 +1,111 @@
+//Menu
+
+const menu = document.querySelector(".menu");
+const menuBtn = document.querySelector(".menu-btn");
+
+const toggleMenu = () => {
+    menu.classList.toggle("show-menu");
+    menuBtn.classList.toggle("open-menu");
+}
+
+menuBtn.addEventListener("click", toggleMenu);
+menu.addEventListener("click", toggleMenu);
+
+menu.querySelectorAll('li').forEach((item, index) => {
+    item.style.transitionDelay = `${40 * index}ms`;
+})
+
 //Hero
 
-const introTextCont = document.querySelector(".intro");
-const cta = document.querySelector('.cta');
-const introText = `This world is but a, canvas to our, imagination.`;
+const cta = document.querySelector(".cta");
 
-const withSpan = [...introText].map((letter, index) => {
-    return `<span class='opacity-0 ${letter === " " || letter === "," ? "" : "inline-block"} transform -translate-x-2 translate-y-6' style='animation: text 400ms linear forwards; animation-delay:${
-    index * 40
-  }ms;'>${letter === "," ? "</br>" : letter === "" ? "&nbsp;" : letter}</span>`;
+cta.addEventListener("click", () => {
+    window.scrollTo(0, document.getElementById("contact").offsetTop);
 });
 
-cta.style.animationDelay = `${withSpan.length * 40 + 600}ms`;
-cta.style.animationName = "text";
+const generateSpans = (text, styleProperty) => {
+    let heading = "";
+    [...text].forEach((letter, index) => {
+        heading += `<span class="${
+      letter === " " ? null : "inline-block"
+    } transition-transform duration-1000 translate-y-full" style="${styleProperty}:${
+      40 * index
+    }ms">${letter !== " " ? letter : "&nbsp;"}</span>`;
+    });
+    return heading;
+};
 
-setTimeout(() => {
-    introTextCont.innerHTML = withSpan.join("");
-}, 400);
+const heroTexts = document.querySelectorAll('.hero-text');
+
+heroTexts.forEach(line => {
+    const text = line.textContent;
+    line.innerHTML = generateSpans(text, "animation-delay");
+    // line.querySelectorAll('span').forEach(s=> s.cl)
+})
 
 // Hide header on scroll down
 
-// var didScroll;
-// var lastScrollTop = 0;
-// var delta = 5;
-// var navbarHeight = $('header').outerHeight();
+let prevScrollpos = window.pageYOffset;
+const headerDiv = document.querySelector("header");
+const headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
 
-// $(window).scroll(function(event){
-//     didScroll = true;
-// });
+window.onscroll = function() {
+    const currentScrollPos = window.pageYOffset;
 
-// setInterval(function() {
-//     if (didScroll) {
-//         hasScrolled();
-//         didScroll = false;
-//     }
-// }, 250);
+    if (prevScrollpos > currentScrollPos || currentScrollPos < headerBottom) {
+        headerDiv.classList.remove("-translate-y-full");
+    } else {
+        headerDiv.classList.add("-translate-y-full");
+    }
 
-// function hasScrolled() {
-//     var st = $(this).scrollTop();
-
-//     // Make scroll more than delta
-//     if(Math.abs(lastScrollTop - st) <= delta)
-//         return;
-
-//     // If scrolled down and past the navbar, add class .nav-up.
-//     if (st > lastScrollTop && st > navbarHeight){
-//         // Scroll Down
-//         $('header').removeClass('nav-down').addClass('nav-up');
-//     } else {
-//         // Scroll Up
-//         if(st + $(window).height() < $(document).height()) {
-//             $('header').removeClass('nav-up').addClass('nav-down');
-//         }
-//     }
-
-//     lastScrollTop = st;
-// }
+    prevScrollpos = currentScrollPos;
+};
 
 //Headings
 
 const headings = document.querySelectorAll(".heading");
 
-const generateSpans = text => {
-    let heading = '';
-    [...text].forEach((letter, index) => {
-        heading += `<span class="${letter === " " ? null : "inline-block"} transition-transform duration-1000 translate-y-9" style="transition-delay:${40 * index}ms">${letter}</span>`
-    });
-    return heading;
-}
+const headingObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((e) => {
+            e.isIntersecting ?
+                e.target.classList.add("show-heading") :
+                e.target.classList.remove("show-heading");
+        });
+    }, {
+        threshold: 1,
+    }
+);
 
-
-
-const headingObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-        e.isIntersecting ? e.target.classList.add('show-heading') : e.target.classList.remove('show-heading');
-    })
-}, {
-    threshold: 1
-});
-
-headings.forEach(h => {
-    h.innerHTML = generateSpans(h.textContent);
+headings.forEach((h) => {
+    h.innerHTML = generateSpans(h.textContent, "transition-delay");
     headingObserver.observe(h);
 });
 
 //About
-const bio = document.querySelector('#bio');
+const bio = document.querySelector("#bio");
 
-const aboutObserver = new IntersectionObserver((entry) => {
-    entry.forEach(e => {
-        if (e.isIntersecting) {
-            e.target.classList.add('show-about');
-        } else {
-            e.target.classList.remove('show-about');
-        }
-    })
-}, {
-    threshold: 0.5
-});
+const aboutObserver = new IntersectionObserver(
+    (entry) => {
+        entry.forEach((e) => {
+            if (e.isIntersecting) {
+                e.target.classList.add("show-about");
+            } else {
+                e.target.classList.remove("show-about");
+            }
+        });
+    }, {
+        threshold: 0.5,
+    }
+);
 
 aboutObserver.observe(bio);
 
 //Gallery
 
-const imgView = document.querySelector('.img-view');
+const imgView = document.querySelector(".img-view");
 const activeImage = imgView.querySelector("img");
-const gallery = document.querySelector('.works');
+const gallery = document.querySelector(".works");
 const zoomOut = imgView.querySelector(".zoom-out");
 const categories = document.querySelectorAll(".category");
 const images = gallery.querySelectorAll(".img");
@@ -122,44 +123,50 @@ zoomOut.addEventListener("click", () => {
     // imgView.classList.add("hidden");
 });
 
-categories.forEach(button => {
+categories.forEach((button) => {
     button.addEventListener("click", (e) => {
         document.querySelector(".active-cat").classList.remove("active-cat");
         e.target.classList.add("active-cat");
         const activeCat = e.target.getAttribute("data-cat");
         if (activeCat === "1") {
-            images.forEach(img => {
-                img.classList.add("block")
-                img.classList.remove("hidden")
+            images.forEach((img) => {
+                img.classList.add("block");
+                img.classList.remove("hidden");
             });
             return;
-        };
+        }
         const active = gallery.querySelectorAll(`.img.${activeCat}`);
-        active.forEach(img => {
-            img.classList.add("block")
-            img.classList.remove("hidden")
+        active.forEach((img) => {
+            img.classList.add("block");
+            img.classList.remove("hidden");
         });
         const inactive = gallery.querySelectorAll(`.img:not(.${activeCat})`);
-        inactive.forEach(img => {
-            img.classList.remove("block")
-            img.classList.add("hidden")
+        inactive.forEach((img) => {
+            img.classList.remove("block");
+            img.classList.add("hidden");
         });
-    })
+    });
 });
 
-//Contact 
-const contactForm = document.querySelector('.form');
+//Contact
+const contactForm = document.querySelector(".form");
 
-const contactObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-        if (e.isIntersecting) {
-            e.target.classList.add('show-form');
-        } else {
-            e.target.classList.remove('show-form');
-        }
-    })
-}, {
-    threshold: 0.7
-});
+const contactObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((e) => {
+            if (e.isIntersecting) {
+                e.target.classList.add("show-form");
+            } else {
+                e.target.classList.remove("show-form");
+            }
+        });
+    }, {
+        threshold: 0.7,
+    }
+);
 
 contactObserver.observe(contactForm);
+
+window.addEventListener("DOMContentLoaded", () => {
+    document.querySelector('body').classList.add("loaded");
+})
