@@ -1,19 +1,27 @@
 //Menu
 
 const menu = document.querySelector(".menu");
+const smallMenu = document.querySelector(".small-menu");
 const menuBtn = document.querySelector(".menu-btn");
 
 const toggleMenu = () => {
-    menu.classList.toggle("show-menu");
     menuBtn.classList.toggle("open-menu");
-}
+    if (window.innerWidth < 640) {
+        smallMenu.classList.toggle("show-menu");
+    } else {
+        menu.classList.toggle("show-menu");
+    }
+};
 
 menuBtn.addEventListener("click", toggleMenu);
-menu.addEventListener("click", toggleMenu);
+smallMenu.addEventListener("click", toggleMenu);
 
-menu.querySelectorAll('li').forEach((item, index) => {
-    item.style.transitionDelay = `${40 * index}ms`;
-})
+smallMenu.querySelectorAll("a").forEach((item, index) => {
+    item.style.transitionDelay = `${150 * index}ms`;
+});
+menu.querySelectorAll("a").forEach((item, index) => {
+    item.style.transitionDelay = `${150 * index}ms`;
+});
 
 //Hero
 
@@ -35,13 +43,12 @@ const generateSpans = (text, styleProperty) => {
     return heading;
 };
 
-const heroTexts = document.querySelectorAll('.hero-text');
+const heroTexts = document.querySelectorAll(".hero-text");
 
-heroTexts.forEach(line => {
+heroTexts.forEach((line) => {
     const text = line.textContent;
     line.innerHTML = generateSpans(text, "animation-delay");
-    // line.querySelectorAll('span').forEach(s=> s.cl)
-})
+});
 
 // Hide header on scroll down
 
@@ -110,17 +117,31 @@ const zoomOut = imgView.querySelector(".zoom-out");
 const categories = document.querySelectorAll(".category");
 const images = gallery.querySelectorAll(".img");
 
+const galleryObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((e) => {
+            if (e.isIntersecting) {
+                e.target.classList.add("show-image");
+            } else {
+                e.target.classList.remove("show-image");
+            }
+        });
+    }, {
+        threshold: 0.4,
+    }
+);
+
+images.forEach((image) => galleryObserver.observe(image));
+
 gallery.addEventListener("click", (e) => {
     if (!e.target.classList.contains("zoom-in")) return;
     const selected = e.target.previousElementSibling.src;
     activeImage.src = selected;
-    // imgView.classList.toggle("show-big-img");
     imgView.classList.add("show-big-img");
 });
 
 zoomOut.addEventListener("click", () => {
     imgView.classList.remove("show-big-img");
-    // imgView.classList.add("hidden");
 });
 
 categories.forEach((button) => {
@@ -168,5 +189,5 @@ const contactObserver = new IntersectionObserver(
 contactObserver.observe(contactForm);
 
 window.addEventListener("DOMContentLoaded", () => {
-    document.querySelector('body').classList.add("loaded");
-})
+    document.querySelector("body").classList.add("loaded");
+});

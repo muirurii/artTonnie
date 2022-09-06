@@ -612,14 +612,6 @@ html {
   z-index: -10;
 }
 
-.col-span-2 {
-  grid-column: span 2 / span 2;
-}
-
-.row-span-2 {
-  grid-row: span 2 / span 2;
-}
-
 .mr-4 {
   margin-right: 1rem;
 }
@@ -632,6 +624,10 @@ html {
   margin-bottom: 2.5rem;
 }
 
+.mr-8 {
+  margin-right: 2rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -640,12 +636,12 @@ html {
   margin-top: 1.5rem;
 }
 
-.ml-1 {
-  margin-left: 0.25rem;
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
-.mr-8 {
-  margin-right: 2rem;
+.ml-1 {
+  margin-left: 0.25rem;
 }
 
 .block {
@@ -692,16 +688,14 @@ html {
   height: 2.25rem;
 }
 
-.h-32 {
-  height: 8rem;
+.h-36 {
+  height: 9rem;
 }
 
-.h-72 {
-  height: 18rem;
-}
-
-.h-96 {
-  height: 24rem;
+.h-fit {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .h-80 {
@@ -720,8 +714,8 @@ html {
   height: 2.5rem;
 }
 
-.h-12 {
-  height: 3rem;
+.h-16 {
+  height: 4rem;
 }
 
 .h-7 {
@@ -730,6 +724,14 @@ html {
 
 .h-6 {
   height: 1.5rem;
+}
+
+.h-\[600px\] {
+  height: 600px;
+}
+
+.h-\[500px\] {
+  height: 500px;
 }
 
 .max-h-\[180px\] {
@@ -748,8 +750,14 @@ html {
   width: 5rem;
 }
 
-.w-32 {
-  width: 8rem;
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.w-36 {
+  width: 9rem;
 }
 
 .w-96 {
@@ -762,6 +770,10 @@ html {
 
 .w-8 {
   width: 2rem;
+}
+
+.w-72 {
+  width: 18rem;
 }
 
 .w-2 {
@@ -780,24 +792,17 @@ html {
   max-width: 36rem;
 }
 
-.basis-1\/3 {
-  flex-basis: 33.333333%;
-}
-
-.basis-8\/12 {
-  flex-basis: 66.666667%;
-}
-
 .basis-7\/12 {
   flex-basis: 58.333333%;
 }
 
-.basis-\[20\%\] {
-  flex-basis: 20%;
-}
-
 .origin-right {
   transform-origin: right;
+}
+
+.translate-x-full {
+  --tw-translate-x: 100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .-translate-x-full {
@@ -810,8 +815,8 @@ html {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.-translate-y-full {
-  --tw-translate-y: -100%;
+.translate-y-full {
+  --tw-translate-y: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -820,8 +825,13 @@ html {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.translate-y-full {
-  --tw-translate-y: 100%;
+.translate-y-48 {
+  --tw-translate-y: 12rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-y-full {
+  --tw-translate-y: -100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -843,8 +853,8 @@ html {
   cursor: pointer;
 }
 
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -877,6 +887,10 @@ html {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-9 {
+  gap: 2.25rem;
 }
 
 .overflow-hidden {
@@ -991,8 +1005,12 @@ html {
   padding-top: 6rem;
 }
 
-.pl-16 {
-  padding-left: 4rem;
+.pb-24 {
+  padding-bottom: 6rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
 }
 
 .pb-8 {
@@ -1058,9 +1076,18 @@ html {
   line-height: 2.5rem;
 }
 
+.leading-8 {
+  line-height: 2rem;
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-orange-600 {
+  --tw-text-opacity: 1;
+  color: rgb(234 88 12 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -1070,6 +1097,17 @@ html {
 
 .opacity-0 {
   opacity: 0;
+}
+
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-gray-400 {
+  --tw-shadow-color: #9ca3af;
+  --tw-shadow: var(--tw-shadow-colored);
 }
 
 .shadow-\[\#343434\] {
@@ -1088,12 +1126,6 @@ html {
   transition-duration: 150ms;
 }
 
-.transition-opacity {
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .transition-transform {
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1108,12 +1140,12 @@ html {
   transition-delay: 300ms;
 }
 
-.duration-500 {
-  transition-duration: 500ms;
+.delay-200 {
+  transition-delay: 200ms;
 }
 
-.duration-\[600ms\] {
-  transition-duration: 600ms;
+.duration-500 {
+  transition-duration: 500ms;
 }
 
 .duration-300 {
@@ -1122,6 +1154,10 @@ html {
 
 .duration-1000 {
   transition-duration: 1000ms;
+}
+
+.ease-linear {
+  transition-timing-function: linear;
 }
 
 .ease-in-out {
@@ -1196,18 +1232,20 @@ html {
           animation: text 500ms forwards;
 }
 
-.menu {
+.small-menu {
   -webkit-clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
           clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
 }
 
-.menu.show-menu {
+.small-menu.show-menu {
   -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
           clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
 }
 
-.menu.show-menu li {
+.small-menu.show-menu a, 
+    .menu.show-menu a {
   transform: none;
+  opacity: 1;
 }
 
 .open-menu .btn-1 {
@@ -1256,16 +1294,15 @@ header::before {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1420' height='700' preserveAspectRatio='none' viewBox='0 0 1420 700'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1033%26quot%3b)' fill='none'%3e%3cpath d='M67.68 -58.65L132.63 -21.15L132.63 53.85L67.68 91.35L2.73 53.85L2.73 -21.15zM197.59 -58.65L262.54 -21.15L262.54 53.85L197.59 91.35L132.63 53.85L132.63 -21.15zM327.5 -58.65L392.45 -21.15L392.45 53.85L327.5 91.35L262.54 53.85L262.54 -21.15zM392.45 503.85L457.4 541.35L457.4 616.35L392.45 653.85L327.5 616.35L327.5 541.35zM522.36 53.85L587.31 91.35L587.31 166.35L522.36 203.85L457.4 166.35L457.4 91.35zM522.36 278.85L587.31 316.35L587.31 391.35L522.36 428.85L457.4 391.35L457.4 316.35zM457.4 391.35L522.36 428.85L522.36 503.85L457.4 541.35L392.45 503.85L392.45 428.85zM457.4 616.35L522.36 653.85L522.36 728.85L457.4 766.35L392.45 728.85L392.45 653.85zM652.26 278.85L717.22 316.35L717.22 391.35L652.26 428.85L587.31 391.35L587.31 316.35zM652.26 503.85L717.22 541.35L717.22 616.35L652.26 653.85L587.31 616.35L587.31 541.35zM782.17 53.85L847.13 91.35L847.13 166.35L782.17 203.85L717.22 166.35L717.22 91.35zM782.17 278.85L847.13 316.35L847.13 391.35L782.17 428.85L717.22 391.35L717.22 316.35zM782.17 503.85L847.13 541.35L847.13 616.35L782.17 653.85L717.22 616.35L717.22 541.35zM912.08 53.85L977.03 91.35L977.03 166.35L912.08 203.85L847.13 166.35L847.13 91.35zM912.08 278.85L977.03 316.35L977.03 391.35L912.08 428.85L847.13 391.35L847.13 316.35zM912.08 503.85L977.03 541.35L977.03 616.35L912.08 653.85L847.13 616.35L847.13 541.35zM977.03 -58.65L1041.99 -21.15L1041.99 53.85L977.03 91.35L912.08 53.85L912.08 -21.15zM977.03 166.35L1041.99 203.85L1041.99 278.85L977.03 316.35L912.08 278.85L912.08 203.85zM1041.99 503.85L1106.94 541.35L1106.94 616.35L1041.99 653.85L977.03 616.35L977.03 541.35zM1106.94 -58.65L1171.89 -21.15L1171.89 53.85L1106.94 91.35L1041.99 53.85L1041.99 -21.15zM1106.94 391.35L1171.89 428.85L1171.89 503.85L1106.94 541.35L1041.99 503.85L1041.99 428.85zM1236.85 -58.65L1301.8 -21.15L1301.8 53.85L1236.85 91.35L1171.89 53.85L1171.89 -21.15zM1236.85 166.35L1301.8 203.85L1301.8 278.85L1236.85 316.35L1171.89 278.85L1171.89 203.85zM1301.8 503.85L1366.75 541.35L1366.75 616.35L1301.8 653.85L1236.85 616.35L1236.85 541.35zM1236.85 616.35L1301.8 653.85L1301.8 728.85L1236.85 766.35L1171.89 728.85L1171.89 653.85zM1366.76 166.35L1431.71 203.85L1431.71 278.85L1366.76 316.35L1301.8 278.85L1301.8 203.85z' stroke='rgba(166%2c 250%2c 233%2c 0.15)' stroke-width='2'%3e%3c/path%3e%3cpath d='M60.18 -58.65 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM125.13 -21.15 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM125.13 53.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM60.18 91.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM-4.77 53.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM-4.77 -21.15 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM190.09 -58.65 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM255.04 -21.15 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM255.04 53.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM190.09 91.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM320 -58.65 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM384.95 -21.15 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM384.95 53.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM320 91.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM384.95 503.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM449.9 541.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM449.9 616.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM384.95 653.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM320 616.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM320 541.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM514.86 53.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM579.81 91.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM579.81 166.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM514.86 203.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM449.9 166.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM449.9 91.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM514.86 278.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM579.81 316.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM579.81 391.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM514.86 428.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM449.9 391.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM449.9 316.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM514.86 503.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM384.95 428.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM514.86 653.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM514.86 728.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM449.9 766.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM384.95 728.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM644.76 278.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM709.72 316.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM709.72 391.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM644.76 428.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM644.76 503.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM709.72 541.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM709.72 616.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM644.76 653.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM579.81 616.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM579.81 541.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM774.67 53.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM839.63 91.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM839.63 166.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM774.67 203.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM709.72 166.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM709.72 91.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM774.67 278.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM839.63 316.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM839.63 391.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM774.67 428.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM774.67 503.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM839.63 541.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM839.63 616.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM774.67 653.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM904.58 53.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM969.53 91.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM969.53 166.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM904.58 203.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM904.58 278.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM969.53 316.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM969.53 391.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM904.58 428.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM904.58 503.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM969.53 541.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM969.53 616.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM904.58 653.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM969.53 -58.65 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1034.49 -21.15 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1034.49 53.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM904.58 -21.15 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1034.49 203.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1034.49 278.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1034.49 503.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1099.44 541.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1099.44 616.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1034.49 653.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1099.44 -58.65 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1164.39 -21.15 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1164.39 53.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1099.44 91.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1099.44 391.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1164.39 428.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1164.39 503.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1034.49 428.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1229.35 -58.65 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1294.3 -21.15 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1294.3 53.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1229.35 91.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1229.35 166.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1294.3 203.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1294.3 278.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1229.35 316.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1164.39 278.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1164.39 203.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1294.3 503.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1359.25 541.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1359.25 616.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1294.3 653.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1229.35 616.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1229.35 541.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1294.3 728.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1229.35 766.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1164.39 728.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1164.39 653.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1359.26 166.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1424.21 203.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1424.21 278.85 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0zM1359.26 316.35 a7.5 7.5 0 1 0 15 0 a7.5 7.5 0 1 0 -15 0z' fill='rgba(166%2c 250%2c 233%2c 0.15)'%3e%3c/path%3e%3cpath d='M33.56 -23.28L76.86 1.72L76.86 51.72L33.56 76.72L-9.74 51.72L-9.74 1.72zM33.56 126.72L76.86 151.72L76.86 201.72L33.56 226.72L-9.74 201.72L-9.74 151.72zM76.86 351.72L120.17 376.72L120.17 426.72L76.86 451.72L33.56 426.72L33.56 376.72zM76.86 501.72L120.17 526.72L120.17 576.72L76.86 601.72L33.56 576.72L33.56 526.72zM33.56 576.72L76.86 601.72L76.86 651.72L33.56 676.72L-9.74 651.72L-9.74 601.72zM76.86 651.72L120.17 676.72L120.17 726.72L76.86 751.72L33.56 726.72L33.56 676.72zM120.17 -23.28L163.47 1.72L163.47 51.72L120.17 76.72L76.86 51.72L76.86 1.72zM163.47 51.72L206.77 76.72L206.77 126.72L163.47 151.72L120.17 126.72L120.17 76.72zM163.47 201.72L206.77 226.72L206.77 276.72L163.47 301.72L120.17 276.72L120.17 226.72zM120.17 576.72L163.47 601.72L163.47 651.72L120.17 676.72L76.86 651.72L76.86 601.72zM163.47 651.72L206.77 676.72L206.77 726.72L163.47 751.72L120.17 726.72L120.17 676.72zM250.07 351.72L293.38 376.72L293.38 426.72L250.07 451.72L206.77 426.72L206.77 376.72zM250.07 501.72L293.38 526.72L293.38 576.72L250.07 601.72L206.77 576.72L206.77 526.72zM206.77 576.72L250.07 601.72L250.07 651.72L206.77 676.72L163.47 651.72L163.47 601.72zM293.38 -23.28L336.68 1.72L336.68 51.72L293.38 76.72L250.07 51.72L250.07 1.72zM336.68 51.72L379.98 76.72L379.98 126.72L336.68 151.72L293.38 126.72L293.38 76.72zM293.38 126.72L336.68 151.72L336.68 201.72L293.38 226.72L250.07 201.72L250.07 151.72zM336.68 351.72L379.98 376.72L379.98 426.72L336.68 451.72L293.38 426.72L293.38 376.72zM336.68 501.72L379.98 526.72L379.98 576.72L336.68 601.72L293.38 576.72L293.38 526.72zM293.38 576.72L336.68 601.72L336.68 651.72L293.38 676.72L250.07 651.72L250.07 601.72zM379.98 126.72L423.28 151.72L423.28 201.72L379.98 226.72L336.68 201.72L336.68 151.72zM423.28 201.72L466.59 226.72L466.59 276.72L423.28 301.72L379.98 276.72L379.98 226.72zM379.98 276.72L423.28 301.72L423.28 351.72L379.98 376.72L336.68 351.72L336.68 301.72zM423.28 351.72L466.59 376.72L466.59 426.72L423.28 451.72L379.98 426.72L379.98 376.72zM379.98 576.72L423.28 601.72L423.28 651.72L379.98 676.72L336.68 651.72L336.68 601.72zM466.59 -23.28L509.89 1.72L509.89 51.72L466.59 76.72L423.28 51.72L423.28 1.72zM553.19 -23.28L596.49 1.72L596.49 51.72L553.19 76.72L509.89 51.72L509.89 1.72zM553.19 126.72L596.49 151.72L596.49 201.72L553.19 226.72L509.89 201.72L509.89 151.72zM639.8 -23.28L683.1 1.72L683.1 51.72L639.8 76.72L596.49 51.72L596.49 1.72zM769.7 51.72L813.01 76.72L813.01 126.72L769.7 151.72L726.4 126.72L726.4 76.72zM769.7 201.72L813.01 226.72L813.01 276.72L769.7 301.72L726.4 276.72L726.4 226.72zM726.4 276.72L769.7 301.72L769.7 351.72L726.4 376.72L683.1 351.72L683.1 301.72zM856.31 501.72L899.61 526.72L899.61 576.72L856.31 601.72L813.01 576.72L813.01 526.72zM813.01 576.72L856.31 601.72L856.31 651.72L813.01 676.72L769.7 651.72L769.7 601.72zM856.31 651.72L899.61 676.72L899.61 726.72L856.31 751.72L813.01 726.72L813.01 676.72zM899.61 -23.28L942.91 1.72L942.91 51.72L899.61 76.72L856.31 51.72L856.31 1.72zM942.91 51.72L986.22 76.72L986.22 126.72L942.91 151.72L899.61 126.72L899.61 76.72zM899.61 126.72L942.91 151.72L942.91 201.72L899.61 226.72L856.31 201.72L856.31 151.72zM942.91 351.72L986.22 376.72L986.22 426.72L942.91 451.72L899.61 426.72L899.61 376.72zM899.61 426.72L942.91 451.72L942.91 501.72L899.61 526.72L856.31 501.72L856.31 451.72zM942.91 651.72L986.22 676.72L986.22 726.72L942.91 751.72L899.61 726.72L899.61 676.72zM1029.52 51.72L1072.82 76.72L1072.82 126.72L1029.52 151.72L986.22 126.72L986.22 76.72zM1029.52 201.72L1072.82 226.72L1072.82 276.72L1029.52 301.72L986.22 276.72L986.22 226.72zM986.22 276.72L1029.52 301.72L1029.52 351.72L986.22 376.72L942.91 351.72L942.91 301.72zM1029.52 351.72L1072.82 376.72L1072.82 426.72L1029.52 451.72L986.22 426.72L986.22 376.72zM986.22 576.72L1029.52 601.72L1029.52 651.72L986.22 676.72L942.91 651.72L942.91 601.72zM1029.52 651.72L1072.82 676.72L1072.82 726.72L1029.52 751.72L986.22 726.72L986.22 676.72zM1072.82 126.72L1116.12 151.72L1116.12 201.72L1072.82 226.72L1029.52 201.72L1029.52 151.72zM1116.12 501.72L1159.42 526.72L1159.42 576.72L1116.12 601.72L1072.82 576.72L1072.82 526.72zM1159.42 -23.28L1202.73 1.72L1202.73 51.72L1159.42 76.72L1116.12 51.72L1116.12 1.72zM1202.73 201.72L1246.03 226.72L1246.03 276.72L1202.73 301.72L1159.42 276.72L1159.42 226.72zM1159.42 276.72L1202.73 301.72L1202.73 351.72L1159.42 376.72L1116.12 351.72L1116.12 301.72zM1202.73 351.72L1246.03 376.72L1246.03 426.72L1202.73 451.72L1159.42 426.72L1159.42 376.72zM1159.42 576.72L1202.73 601.72L1202.73 651.72L1159.42 676.72L1116.12 651.72L1116.12 601.72zM1289.33 651.72L1332.63 676.72L1332.63 726.72L1289.33 751.72L1246.03 726.72L1246.03 676.72zM1332.63 126.72L1375.94 151.72L1375.94 201.72L1332.63 226.72L1289.33 201.72L1289.33 151.72zM1332.63 576.72L1375.94 601.72L1375.94 651.72L1332.63 676.72L1289.33 651.72L1289.33 601.72zM1462.54 201.72L1505.85 226.72L1505.85 276.72L1462.54 301.72L1419.24 276.72L1419.24 226.72z' stroke='rgba(0%2c 0%2c 0%2c 0.13)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1033'%3e%3crect width='1420' height='700' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
 }
 
-.bio.show-about::after {
-  right: 10%;
-}
-
-.bio.show-about::before {
-  height: 12rem;
+.bio.show-about::after, 
+    .bio.show-about::before, 
+    .bio.show-about section::after {
+  transform: none;
 }
 
 .show-about .about-name, 
-    .show-about .about-text {
+    .show-about .about-text, 
+    .show-image img {
   transform: none;
   opacity: 1;
 }
@@ -1289,16 +1326,11 @@ header::before {
 .form.show-form input, 
     .form.show-form textarea {
   opacity: 1;
-  width: 24rem;
+  width: 100%;
 }
 
 .form.show-form button {
   transform: none;
-}
-
-.before\:absolute::before {
-  content: var(--tw-content);
-  position: absolute;
 }
 
 .before\:top-24::before {
@@ -1306,19 +1338,14 @@ header::before {
   top: 6rem;
 }
 
-.before\:left-1\/2::before {
+.before\:left-\[40\%\]::before {
   content: var(--tw-content);
-  left: 50%;
+  left: 40%;
 }
 
-.before\:left-\[33\%\]::before {
+.before\:h-48::before {
   content: var(--tw-content);
-  left: 33%;
-}
-
-.before\:h-0::before {
-  content: var(--tw-content);
-  height: 0px;
+  height: 12rem;
 }
 
 .before\:w-\[1px\]::before {
@@ -1326,9 +1353,14 @@ header::before {
   width: 1px;
 }
 
-.before\:-translate-x-full::before {
+.before\:origin-top::before {
   content: var(--tw-content);
-  --tw-translate-x: -100%;
+  transform-origin: top;
+}
+
+.before\:-scale-y-0::before {
+  content: var(--tw-content);
+  --tw-scale-y: 0;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1341,6 +1373,13 @@ header::before {
 .before\:transition-all::before {
   content: var(--tw-content);
   transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.before\:transition-transform::before {
+  content: var(--tw-content);
+  transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1365,9 +1404,34 @@ header::before {
   top: 6rem;
 }
 
-.after\:right-1\/2::after {
+.after\:left-2::after {
   content: var(--tw-content);
-  right: 50%;
+  left: 0.5rem;
+}
+
+.after\:-bottom-4::after {
+  content: var(--tw-content);
+  bottom: -1rem;
+}
+
+.after\:-left-2::after {
+  content: var(--tw-content);
+  left: -0.5rem;
+}
+
+.after\:bottom-0::after {
+  content: var(--tw-content);
+  bottom: 0px;
+}
+
+.after\:left-0::after {
+  content: var(--tw-content);
+  left: 0px;
+}
+
+.after\:h-full::after {
+  content: var(--tw-content);
+  height: 100%;
 }
 
 .after\:h-\[1px\]::after {
@@ -1375,15 +1439,70 @@ header::before {
   height: 1px;
 }
 
-.after\:w-header::after {
+.after\:w-\[1px\]::after {
   content: var(--tw-content);
-  width: calc(100vw - 20%);
+  width: 1px;
+}
+
+.after\:w-48::after {
+  content: var(--tw-content);
+  width: 12rem;
+}
+
+.after\:origin-left::after {
+  content: var(--tw-content);
+  transform-origin: left;
+}
+
+.after\:scale-y-0::after {
+  content: var(--tw-content);
+  --tw-scale-y: 0;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.after\:scale-x-0::after {
+  content: var(--tw-content);
+  --tw-scale-x: 0;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.after\:rounded-bl::after {
+  content: var(--tw-content);
+  border-bottom-left-radius: 0.25rem;
 }
 
 .after\:bg-black::after {
   content: var(--tw-content);
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.after\:pl-4::after {
+  content: var(--tw-content);
+  padding-left: 1rem;
+}
+
+.after\:font-hero::after {
+  content: var(--tw-content);
+  font-family: Bebas Neue, sans-serif;
+}
+
+.after\:text-8xl::after {
+  content: var(--tw-content);
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.after\:opacity-10::after {
+  content: var(--tw-content);
+  opacity: 0.1;
+}
+
+.after\:transition-transform::after {
+  content: var(--tw-content);
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .after\:transition-all::after {
@@ -1393,9 +1512,29 @@ header::before {
   transition-duration: 150ms;
 }
 
+.after\:delay-500::after {
+  content: var(--tw-content);
+  transition-delay: 500ms;
+}
+
 .after\:duration-500::after {
   content: var(--tw-content);
   transition-duration: 500ms;
+}
+
+.after\:content-\[\'01\'\]::after {
+  --tw-content: '01';
+  content: var(--tw-content);
+}
+
+.after\:content-\[\'02\'\]::after {
+  --tw-content: '02';
+  content: var(--tw-content);
+}
+
+.after\:content-\[\'03\'\]::after {
+  --tw-content: '03';
+  content: var(--tw-content);
 }
 
 .hover\:translate-y-\[2px\]:hover {
@@ -1422,10 +1561,6 @@ header::before {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.hover\:opacity-70:hover {
-  opacity: 0.7;
-}
-
 .hover\:shadow-lg:hover {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -1446,6 +1581,14 @@ header::before {
 }
 
 @media (min-width: 640px) {
+  .sm\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
+  .sm\:row-span-2 {
+    grid-row: span 2 / span 2;
+  }
+
   .sm\:block {
     display: block;
   }
@@ -1454,7 +1597,83 @@ header::before {
     display: none;
   }
 
+  .sm\:w-96 {
+    width: 24rem;
+  }
+
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .sm\:justify-center {
     justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:mt-0 {
+    margin-top: 0px;
+  }
+
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:mt-0 {
+    margin-top: 0px;
+  }
+
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:w-2\/5 {
+    width: 40%;
+  }
+
+  .lg\:-translate-y-full {
+    --tw-translate-y: -100%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lg\:before\:absolute::before {
+    content: var(--tw-content);
+    position: absolute;
+  }
+
+  .lg\:after\:right-1\/2::after {
+    content: var(--tw-content);
+    right: 50%;
+  }
+
+  .lg\:after\:hidden::after {
+    content: var(--tw-content);
+    display: none;
+  }
+
+  .lg\:after\:h-\[1px\]::after {
+    content: var(--tw-content);
+    height: 1px;
+  }
+
+  .lg\:after\:w-header::after {
+    content: var(--tw-content);
+    width: calc(100vw - 20%);
+  }
+
+  .lg\:after\:scale-x-0::after {
+    content: var(--tw-content);
+    --tw-scale-x: 0;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 }
