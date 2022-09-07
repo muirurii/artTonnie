@@ -1,34 +1,58 @@
+//Cursor
+const cursor = document.querySelector('.cursor');
+
+window.addEventListener("mousemove", (e) => {
+    cursor.style.top = `${e.clientY}px`;
+    cursor.style.left = `${e.clientX}px`;
+});
+window.addEventListener("mouseover", (e) => {
+    if (e.target.classList.contains("letter")) {
+        e.target.classList.add("text-white");
+    }
+});
+window.addEventListener("mouseout", (e) => {
+    if (e.target.classList.contains("letter")) {
+        setTimeout(() => {
+            e.target.classList.remove("text-white");
+        }, 400)
+    }
+});
+
+window.addEventListener("click", (e) => {
+    cursor.classList.add("animate-ping");
+    setTimeout(() => {
+        cursor.classList.remove("animate-ping");
+    }, 400)
+});
+
 //Menu
 
-const menu = document.querySelector(".menu");
-const smallMenu = document.querySelector(".small-menu");
 const menuBtn = document.querySelector(".menu-btn");
+const list = document.querySelector(".list");
 
 const toggleMenu = () => {
     menuBtn.classList.toggle("open-menu");
-    if (window.innerWidth < 640) {
-        smallMenu.classList.toggle("show-menu");
-    } else {
-        menu.classList.toggle("show-menu");
-    }
+    list.classList.toggle("show-menu");
 };
 
 menuBtn.addEventListener("click", toggleMenu);
-smallMenu.addEventListener("click", toggleMenu);
 
-smallMenu.querySelectorAll("a").forEach((item, index) => {
-    item.style.transitionDelay = `${150 * index}ms`;
-});
-menu.querySelectorAll("a").forEach((item, index) => {
+list.querySelectorAll("a").forEach((item, index) => {
     item.style.transitionDelay = `${150 * index}ms`;
 });
 
 //Hero
 
-const cta = document.querySelector(".cta");
+const toContact = document.querySelector(".cta-1");
+const toGallery = document.querySelector(".cta-2");
 
-cta.addEventListener("click", () => {
-    window.scrollTo(0, document.getElementById("contact").offsetTop);
+const scroller = id => window.scrollTo(0, document.getElementById(id).offsetTop);
+
+toContact.addEventListener("click", () => {
+    scroller("contact");
+});
+toGallery.addEventListener("click", () => {
+    scroller("gallery");
 });
 
 const generateSpans = (text, styleProperty) => {
@@ -36,7 +60,7 @@ const generateSpans = (text, styleProperty) => {
     [...text].forEach((letter, index) => {
         heading += `<span class="${
       letter === " " ? null : "inline-block"
-    } transition-transform duration-1000 translate-y-full" style="${styleProperty}:${
+    } transition-all duration-700 translate-y-full letter" style="${styleProperty}:${
       40 * index
     }ms">${letter !== " " ? letter : "&nbsp;"}</span>`;
     });

@@ -6,6 +6,9 @@
         scroll-behavior: smooth;
         @apply scroll-pt-20;
     }
+     ::-webkit-scrollbar {
+        width: 0;
+    }
 }
 
 @layer utilities {
@@ -55,26 +58,27 @@
     .hero-text span {
         animation: text 500ms forwards;
     }
-    .small-menu {
-        clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
-    }
-    .small-menu.show-menu {
-        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
-    }
-    .small-menu.show-menu a,
-    .menu.show-menu a {
+    .list.show-menu {
+        @apply delay-75;
         @apply transform-none;
         @apply opacity-100;
+        @apply rounded;
+    }
+    .list.show-menu,
+    .list.show-menu a {
+        @apply transform-none;
     }
     .open-menu .btn-1 {
-        @apply hidden;
+        @apply -translate-y-full;
     }
     .open-menu .btn-2 {
-        @apply block;
+        @apply -translate-y-4;
+    }
+    button.open-menu svg {
+        @apply fill-white;
     }
     @keyframes text {
         to {
-            @apply opacity-100;
             @apply transform-none;
         }
     }
@@ -83,6 +87,7 @@
         animation: text 400ms forwards;
     }
     .cta {
+        @apply opacity-100;
         animation: text 400ms 800ms forwards;
     }
     header::before {

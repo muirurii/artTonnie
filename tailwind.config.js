@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./*.html", "./src/**/*.{html,js}"],
+    content: ["./*.html", "./src/**/*.{html,js},"],
     theme: {
         extend: {
             fontFamily: {
@@ -8,7 +8,7 @@ module.exports = {
                 hero: ["Bebas Neue", "sans-serif"]
             },
             fontSize: {
-                hero: "clamp(4rem, 6vw, 6rem)",
+                hero: "clamp(4rem, 7.5vw, 8rem)",
             },
             height: {
                 hero: "clamp(4rem, 9vw, 6rem)",
