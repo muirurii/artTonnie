@@ -2,42 +2,45 @@
 const cursor = document.querySelector('.cursor');
 
 window.addEventListener("mousemove", (e) => {
-    cursor.style.top = `${e.clientY}px`;
-    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY - 10}px`;
+    cursor.style.left = `${e.clientX - 15}px`;
 });
 window.addEventListener("mouseover", (e) => {
     if (e.target.classList.contains("letter")) {
-        e.target.classList.add("text-white");
+        e.target.classList.add("skew-y-12");
     }
 });
 window.addEventListener("mouseout", (e) => {
     if (e.target.classList.contains("letter")) {
         setTimeout(() => {
-            e.target.classList.remove("text-white");
+            e.target.classList.remove("skew-y-12");
         }, 400)
     }
 });
 
 window.addEventListener("click", (e) => {
-    cursor.classList.add("animate-ping");
+    cursor.classList.add("clicked");
     setTimeout(() => {
-        cursor.classList.remove("animate-ping");
+        cursor.classList.remove("clicked");
     }, 400)
 });
 
 //Menu
 
 const menuBtn = document.querySelector(".menu-btn");
-const list = document.querySelector(".list");
+const menu = document.querySelector(".menu");
+let menuClick;
 
 const toggleMenu = () => {
-    menuBtn.classList.toggle("open-menu");
-    list.classList.toggle("show-menu");
+    clearTimeout(menuClick);
+    menuClick = setTimeout(() => {
+        menuBtn.classList.toggle("open-menu");
+        menu.classList.toggle("show-menu");
+    }, 300);
 };
 
 menuBtn.addEventListener("click", toggleMenu);
-
-list.querySelectorAll("a").forEach((item, index) => {
+menu.querySelectorAll("a").forEach((item, index) => {
     item.style.transitionDelay = `${150 * index}ms`;
 });
 
@@ -55,12 +58,12 @@ toGallery.addEventListener("click", () => {
     scroller("gallery");
 });
 
-const generateSpans = (text, styleProperty) => {
+const generateSpans = (text) => {
     let heading = "";
     [...text].forEach((letter, index) => {
         heading += `<span class="${
       letter === " " ? null : "inline-block"
-    } transition-all duration-700 translate-y-full letter" style="${styleProperty}:${
+    } translate-y-full letter" style="animation-delay:${
       40 * index
     }ms">${letter !== " " ? letter : "&nbsp;"}</span>`;
     });
@@ -71,26 +74,8 @@ const heroTexts = document.querySelectorAll(".hero-text");
 
 heroTexts.forEach((line) => {
     const text = line.textContent;
-    line.innerHTML = generateSpans(text, "animation-delay");
+    line.innerHTML = generateSpans(text);
 });
-
-// Hide header on scroll down
-
-let prevScrollpos = window.pageYOffset;
-const headerDiv = document.querySelector("header");
-const headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
-
-window.onscroll = function() {
-    const currentScrollPos = window.pageYOffset;
-
-    if (prevScrollpos > currentScrollPos || currentScrollPos < headerBottom) {
-        headerDiv.classList.remove("-translate-y-full");
-    } else {
-        headerDiv.classList.add("-translate-y-full");
-    }
-
-    prevScrollpos = currentScrollPos;
-};
 
 //Headings
 
@@ -99,9 +84,10 @@ const headings = document.querySelectorAll(".heading");
 const headingObserver = new IntersectionObserver(
     (entries) => {
         entries.forEach((e) => {
-            e.isIntersecting ?
-                e.target.classList.add("show-heading") :
-                e.target.classList.remove("show-heading");
+            if (e.isIntersecting) {
+                e.target.classList.add("show-heading");
+                headingObserver.unobserve(e.target);
+            }
         });
     }, {
         threshold: 1,
@@ -109,9 +95,32 @@ const headingObserver = new IntersectionObserver(
 );
 
 headings.forEach((h) => {
-    h.innerHTML = generateSpans(h.textContent, "transition-delay");
+    h.innerHTML = generateSpans(h.textContent);
     headingObserver.observe(h);
 });
+
+// Hide header on scroll down
+
+let prevScrollpos = window.pageYOffset;
+const headerDiv = document.querySelector("header");
+const headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
+
+window.onscroll = function(e) {
+
+    const currentScrollPos = window.pageYOffset;
+
+    if (menu.classList.contains("show-menu")) {
+        return null;
+    } else if (prevScrollpos > currentScrollPos || currentScrollPos < headerBottom) {
+        headerDiv.classList.remove("scrolled");
+    } else {
+        setTimeout(() => {
+            headerDiv.classList.add("scrolled");
+        }, 1000);
+    }
+
+    prevScrollpos = currentScrollPos;
+};
 
 //About
 const bio = document.querySelector("#bio");
@@ -121,8 +130,7 @@ const aboutObserver = new IntersectionObserver(
         entry.forEach((e) => {
             if (e.isIntersecting) {
                 e.target.classList.add("show-about");
-            } else {
-                e.target.classList.remove("show-about");
+                aboutObserver.unobserve(e.target);
             }
         });
     }, {
@@ -146,8 +154,7 @@ const galleryObserver = new IntersectionObserver(
         entries.forEach((e) => {
             if (e.isIntersecting) {
                 e.target.classList.add("show-image");
-            } else {
-                e.target.classList.remove("show-image");
+                galleryObserver.unobserve(e.target);
             }
         });
     }, {
@@ -201,8 +208,7 @@ const contactObserver = new IntersectionObserver(
         entries.forEach((e) => {
             if (e.isIntersecting) {
                 e.target.classList.add("show-form");
-            } else {
-                e.target.classList.remove("show-form");
+                contactObserver.unobserve(e.target);
             }
         });
     }, {

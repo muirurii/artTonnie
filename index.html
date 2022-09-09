@@ -18,8 +18,8 @@
         <div class="load"></div>
     </div>
     <div class="body hidden">
-        <header class="fixed z-30 transition-all duration-500 delay-500 bg-gradient-to-r from-rose-100 to-teal-100 w-full h-20">
-            <div class="px-[8%] flex justify-between items-center">
+        <header class="fixed px-[8%] flex justify-between items-center z-30 bg-gradient-to-r from-rose-100 to-teal-100 w-full h-20">
+            <div>
                 <svg class="h-full w-20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 398.53 405.88" style="enable-background:new 0 0 398.53 405.88;" xml:space="preserve">
             <style type="text/css">
                 .st0 {
@@ -78,7 +78,9 @@
             <polygon class="st1 arch"
                 points="272.88,270.75 249.46,266.67 248.67,266.54 250.07,263.78 254.37,255.32 254.37,255.31 257.97,248.23   268.27,263.78 270.22,266.73 " />
                 </svg>
-                <button class="menu-btn h-8 outline-none overflow-hidden" type="button">
+            </div>
+            <div class="h-full menu-btn relative flex items-center">
+                <button class="inline-block h-8 outline-none overflow-hidden" type="button">
                     <div class="btn-1 pointer-events-none btn-1 transition-transform duration-300">
                         <svg class="h-8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56 56" style="enable-background:new 0 0 56 56;" xml:space="preserve">
                             <path d="M28,0C12.561,0,0,12.561,0,28s12.561,28,28,28s28-12.561,28-28S43.439,0,28,0z M40,41H16c-1.104,0-2-0.896-2-2s0.896-2,2-2  h24c1.104,0,2,0.896,2,2S41.104,41,40,41z M40,30H16c-1.104,0-2-0.896-2-2s0.896-2,2-2h24c1.104,0,2,0.896,2,2S41.104,30,40,30z   M40,19H16c-1.104,0-2-0.896-2-2s0.896-2,2-2h24c1.104,0,2,0.896,2,2S41.104,19,40,19z"/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
@@ -90,25 +92,25 @@
                         </svg>
                     </div>
                 </button>
+                <nav class="fixed menu transition-all rounded-tl-full rounded-bl-full opacity-0 translate-x-full duration-[400ms] delay-[900ms] top-0 -z-10 -right-0 w-full sm:w-96 h-screen bg-white flex items-center justify-center">
+                    <ul class="leading-8">
+                        <li class="mr-4 overflow-hidden"><a class="transition-transform duration-500 text-5xl sm:text-6xl inline-block translate-y-full" href="#">Home</a></li>
+                        <li class="mr-4 overflow-hidden"><a class="transition-transform duration-500 text-5xl sm:text-6xl inline-block translate-y-full" href="#bio">Bio</a></li>
+                        <li class="mr-4 overflow-hidden"><a class="transition-transform duration-500 text-5xl sm:text-6xl inline-block translate-y-full" href="#services">Services</a></li>
+                        <li class="mr-4 overflow-hidden"><a class="transition-transform duration-500 text-5xl sm:text-6xl inline-block translate-y-full" href="#gallery">Gallery</a></li>
+                        <li class="mr-4 overflow-hidden"><a class="transition-transform duration-500 text-5xl sm:text-6xl inline-block translate-y-full" href="#contact">Contacts</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="fixed list transition-all rounded-tl-full rounded-bl-full opacity-0 translate-x-full duration-300 delay-[900ms] top-0 -z-10 -right-0 w-full sm:w-96 h-screen bg-white flex items-center justify-center">
-                <ul class="leading-8">
-                    <li class="mr-4 overflow-hidden"><a class="transition-transform duration-500 text-5xl sm:text-6xl inline-block translate-y-full" href="#">Home</a></li>
-                    <li class="mr-4 overflow-hidden"><a class="transition-transform duration-500 text-5xl sm:text-6xl inline-block translate-y-full" href="#bio">Bio</a></li>
-                    <li class="mr-4 overflow-hidden"><a class="transition-transform duration-500 text-5xl sm:text-6xl inline-block translate-y-full" href="#services">Services</a></li>
-                    <li class="mr-4 overflow-hidden"><a class="transition-transform duration-500 text-5xl sm:text-6xl inline-block translate-y-full" href="#gallery">Gallery</a></li>
-                    <li class="mr-4 overflow-hidden"><a class="transition-transform duration-500 text-5xl sm:text-6xl inline-block translate-y-full" href="#contact">Contacts</a></li>
-                </ul>
-            </nav>
         </header>
         <main>
-            <div class="cursor fixed h-8 w-8 bg-black opacity-30 pointer-events-none border-2 border-dotted -translate-y-4 -translate-x-4 border-fade rounded-full z-30 transition-all duration-300"></div>
-            <section id="#" class="hero overflow-hidden relative pt-24 px-4 min-h-screen flex flex-col justify-center items-center">
+            <div class="cursor fixed flex items-center justify-center h-8 w-8 z-[2000] pointer-events-none rounded-full"></div>
+            <section id="#" class="hero overflow-hidden relative pt-20 px-4 min-h-screen flex flex-col justify-center items-center">
                 <h1 class="h-full font-hero text-hero w-full intro text-center overflow-hidden">
-                    <p class="h-hero hero-text overflow-hidden flex items-center justify-start sm:justify-center">This world is</p>
-                    <p class="h-hero hero-text overflow-hidden flex items-center justify-start sm:justify-center">but a canvas</p>
-                    <p class="h-hero hero-text overflow-hidden flex items-center justify-start sm:justify-center">to our</p>
-                    <p class="h-hero hero-text overflow-hidden flex items-center justify-start sm:justify-center">imagination</p>
+                    <p class="h-hero hero-text overflow-hidden flex items-center justify-center">This world is</p>
+                    <p class="h-hero hero-text overflow-hidden flex items-center justify-center">but a canvas</p>
+                    <p class="h-hero hero-text overflow-hidden flex items-center justify-center">to our</p>
+                    <p class="h-hero hero-text overflow-hidden flex items-center justify-center">imagination</p>
                 </h1>
                 <div class="flex flex-wrap gap-4 sm:gap-8 pt-8">
                     <button class="cta cta-1 translate-y-32 border border-black hover:bg-transparent hover:text-black block text-sm py-3 px-4 bg-black text-white rounded">Get a painting</button>
@@ -134,21 +136,21 @@
             <section id="services" class="relative px-4 pt-24 mb-10">
                 <h1 class="font-hero text-4xl absolute top-10 left-4 heading overflow-hidden h-9">SERVICES</h1>
                 <section class="flex justify-evenly flex-wrap gap-9">
-                    <section class="h-fit w-96 flex flex-col relative p-4 pb-24 rounded shadow-sm shadow-gray-400 after:content-['01'] after:font-hero after:text-8xl after:opacity-10 after:rounded-bl after:absolute after:bottom-0 after:left-0 after:pl-4">
-                        <h2>Painting</h2>
-                        <p class="pt-4">
+                    <section class="s-card border border-black h-fit w-96 flex flex-col relative p-4 pb-12 overflow-hidden rounded shadow-sm after:content-['01'] after:font-hero after:text-8xl after:opacity-10 after:absolute after:top-1/2 after:-translate-y-1/2 after:-left-8 after:pl-4 before:absolute before:right-0 before:top-0 before:bg-black before:rounded-bl before:h-card before:w-card">
+                        <h2 class="font-bod">Painting</h2>
+                        <p class="pt-4 font-light">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, deserunt repellat aliquid dolorem dolore distinctio. Illum asperiores nam perspiciatis corporis nostrum? Animi quis consequatur error necessitatibus quibusdam ipsa, fuga aut.
                         </p>
                     </section>
-                    <section class="h-80 w-96 flex flex-col relative p-4 pb-24 rounded shadow-sm shadow-gray-400 after:content-['02'] after:font-hero after:text-8xl after:opacity-10 after:rounded-bl after:absolute after:bottom-0 after:left-0 after:pl-4">
-                        <h2>Portraits</h2>
-                        <p class="pt-4">
+                    <section class="s-card border border-black h-fit w-96 flex flex-col relative p-4 pb-12 overflow-hidden rounded shadow-sm after:content-['02'] after:font-hero after:text-8xl after:opacity-10 after:absolute after:top-1/2 after:-translate-y-1/2 after:-left-8 after:pl-4 before:absolute before:right-0 before:top-0 before:bg-black before:rounded-bl before:h-card before:w-card">
+                        <h2 class="font-bod">Portraits</h2>
+                        <p class="pt-4 font-light">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, adipisci tenetur odio debitis harum distinctio voluptates et saepe similique officia ipsum delectus reprehenderit illo fugiat vitae ut consectetur nulla repellendus?
                         </p>
                     </section>
-                    <section class="h-fit w-96 flex flex-col relative p-4 pb-24 rounded shadow-sm shadow-gray-400 after:content-['03'] after:font-hero after:text-8xl after:opacity-10 after:rounded-bl after:absolute after:bottom-0 after:left-0 after:pl-4">
-                        <h2>Murals</h2>
-                        <p class="pt-4">
+                    <section class="s-card border border-black h-fit w-96 flex flex-col relative p-4 pb-12 overflow-hidden rounded shadow-sm after:content-['03'] after:font-hero after:text-8xl after:opacity-10 after:absolute after:top-1/2 after:-translate-y-1/2 after:-left-8 after:pl-4 before:absolute before:right-0 before:top-0 before:bg-black before:rounded-bl before:h-card before:w-card">
+                        <h2 class="font-bod">Murals</h2>
+                        <p class="pt-4 font-light">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex eveniet at nisi explicabo, magni cum quaerat! Assumenda excepturi ipsum deleniti. Earum laudantium molestiae aliquam sit nisi beatae inventore minima magnam.
                         </p>
                     </section>
@@ -365,7 +367,7 @@
                                 </a>
                             </li>
                             <li class="mr-8 transition-transform duration-300 hover:translate-y-[2px]">
-                                <a href="https://wa.me/">
+                                <a href="https://wa.me/+254704571786">
                                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" aria-label="WhatsApp" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#25d366"/><path fill="#25d366" stroke="#fff" stroke-width="26" d="M123 393l14-65a138 138 0 1150 47z"/><path fill="#fff" d="M308 273c-3-2-6-3-9 1l-12 16c-3 2-5 3-9 1-15-8-36-17-54-47-1-4 1-6 3-8l9-14c2-2 1-4 0-6l-12-29c-3-8-6-7-9-7h-8c-2 0-6 1-10 5-22 22-13 53 3 73 3 4 23 40 66 59 32 14 39 12 48 10 11-1 22-10 27-19 1-3 6-16 2-18"/></svg>
                                 </a>
                             </li>
@@ -381,7 +383,7 @@
                 </section>
             </section>
         </main>
-        <footer class="bg-black text-white py-8 px-4 flex justify-evenly flex-wrap leading-8">
+        <footer class="bg-black text-white font-light py-8 px-4 flex justify-evenly flex-wrap leading-8">
             <p class="mr-4">Artonnie Creations</p>
             <p class="mr-4">Copyright &copy; 2022</p>
             <p class="mr-4">Crafted by <a class="underline text-orange-600" href="https://peterngugi.netlify.app" target="_blank">Peter</a></p>
