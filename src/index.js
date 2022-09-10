@@ -1,5 +1,5 @@
 //Cursor
-const cursor = document.querySelector('.cursor');
+const cursor = document.querySelector(".cursor");
 
 window.addEventListener("mousemove", (e) => {
     cursor.style.top = `${e.clientY - 10}px`;
@@ -14,7 +14,7 @@ window.addEventListener("mouseout", (e) => {
     if (e.target.classList.contains("letter")) {
         setTimeout(() => {
             e.target.classList.remove("skew-y-12");
-        }, 400)
+        }, 400);
     }
 });
 
@@ -22,7 +22,7 @@ window.addEventListener("click", (e) => {
     cursor.classList.add("clicked");
     setTimeout(() => {
         cursor.classList.remove("clicked");
-    }, 400)
+    }, 400);
 });
 
 //Menu
@@ -49,7 +49,8 @@ menu.querySelectorAll("a").forEach((item, index) => {
 const toContact = document.querySelector(".cta-1");
 const toGallery = document.querySelector(".cta-2");
 
-const scroller = id => window.scrollTo(0, document.getElementById(id).offsetTop);
+const scroller = (id) =>
+    window.scrollTo(0, document.getElementById(id).offsetTop);
 
 toContact.addEventListener("click", () => {
     scroller("contact");
@@ -63,9 +64,9 @@ const generateSpans = (text) => {
     [...text].forEach((letter, index) => {
         heading += `<span class="${
       letter === " " ? null : "inline-block"
-    } translate-y-full letter" style="animation-delay:${
-      40 * index
-    }ms">${letter !== " " ? letter : "&nbsp;"}</span>`;
+    } translate-y-full letter" style="animation-delay:${40 * index}ms">${
+      letter !== " " ? letter : "&nbsp;"
+    }</span>`;
     });
     return heading;
 };
@@ -106,21 +107,39 @@ const headerDiv = document.querySelector("header");
 const headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
 
 window.onscroll = function(e) {
-
     const currentScrollPos = window.pageYOffset;
-
     if (menu.classList.contains("show-menu")) {
         return null;
-    } else if (prevScrollpos > currentScrollPos || currentScrollPos < headerBottom) {
+    } else if (
+        prevScrollpos > currentScrollPos ||
+        currentScrollPos < headerBottom
+    ) {
         headerDiv.classList.remove("scrolled");
     } else {
-        setTimeout(() => {
-            headerDiv.classList.add("scrolled");
-        }, 1000);
+        headerDiv.classList.add("scrolled");
     }
 
     prevScrollpos = currentScrollPos;
 };
+
+//Services
+
+const serviceCards = document.querySelectorAll(".s-card");
+
+const serviceObserver = new IntersectionObserver(
+    (entry) => {
+        entry.forEach((e) => {
+            if (e.isIntersecting) {
+                e.target.classList.add("animate-service");
+                serviceObserver.unobserve(e.target);
+            }
+        });
+    }, {
+        threshold: 0.8,
+    }
+);
+
+serviceCards.forEach((card) => serviceObserver.observe(card));
 
 //About
 const bio = document.querySelector("#bio");
@@ -219,5 +238,7 @@ const contactObserver = new IntersectionObserver(
 contactObserver.observe(contactForm);
 
 window.addEventListener("DOMContentLoaded", () => {
-    document.querySelector("body").classList.add("loaded");
+    setTimeout(() => {
+        document.querySelector("body").classList.add("loaded");
+    }, 2000);
 });

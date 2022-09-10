@@ -4,7 +4,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                main: ["Plus Jakarta Sans", "sans-serif"],
+                main: ["Poppins", "sans-serif"],
                 hero: ["Bebas Neue", "sans-serif"]
             },
             fontSize: {
@@ -12,11 +12,11 @@ module.exports = {
             },
             height: {
                 hero: "clamp(4rem, 9vw, 6rem)",
-                card: "calc(10% + 1px)",
+                card: "calc(10% + 0px)",
             },
             width: {
                 header: "calc(100vw - 20%)",
-                card: "calc(10% + 1px)",
+                card: "calc(10% - 1px)",
             },
             colors: {
                 fade: "#ffffffb4"

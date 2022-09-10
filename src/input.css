@@ -86,7 +86,6 @@
         animation: text 500ms forwards;
     }
     .menu.show-menu {
-        @apply delay-75;
         @apply transform-none;
         @apply opacity-100;
         @apply rounded;
@@ -128,8 +127,60 @@
         @apply transform-none;
         @apply opacity-100;
     }
-    .s-card {
+    .s-card::after {
         clip-path: polygon(90% 0, 100% 10%, 100% 100%, 0 100%, 0 0);
+    }
+    .s-card::before {
+        clip-path: polygon(0 0, 100% 100%, 0 100%);
+    }
+    .animate-service h2 {
+        animation: service 500ms 300ms forwards;
+    }
+    @keyframes service {
+        100% {
+            @apply translate-y-0;
+        }
+    }
+    .animate-service {
+        animation: myAnim 1200ms forwards;
+    }
+    @keyframes myAnim {
+        0% {
+            animation-timing-function: ease-in;
+            opacity: 1;
+            transform: translateY(-45px);
+        }
+        24% {
+            opacity: 1;
+        }
+        40% {
+            animation-timing-function: ease-in;
+            transform: translateY(-24px);
+        }
+        65% {
+            animation-timing-function: ease-in;
+            transform: translateY(-12px);
+        }
+        82% {
+            animation-timing-function: ease-in;
+            transform: translateY(-6px);
+        }
+        93% {
+            animation-timing-function: ease-in;
+            transform: translateY(-4px);
+        }
+        25%,
+        55%,
+        75%,
+        87% {
+            animation-timing-function: ease-out;
+            transform: translateY(0px);
+        }
+        100% {
+            animation-timing-function: ease-out;
+            opacity: 1;
+            transform: translateY(0px);
+        }
     }
     .active-cat {
         @apply bg-black;
