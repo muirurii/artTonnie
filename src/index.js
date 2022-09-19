@@ -41,7 +41,8 @@ const toggleMenu = () => {
 
 menuBtn.addEventListener("click", toggleMenu);
 menu.querySelectorAll("a").forEach((item, index) => {
-    item.style.transitionDelay = `${150 * index}ms`;
+    item.style.transitionDelay = `${150 * (index + 1)}ms`;
+    item.addEventListener("click", toggleMenu);
 });
 
 //Hero
@@ -107,6 +108,7 @@ const headerDiv = document.querySelector("header");
 const headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
 
 window.onscroll = function(e) {
+
     const currentScrollPos = window.pageYOffset;
     if (menu.classList.contains("show-menu")) {
         return null;
