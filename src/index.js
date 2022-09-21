@@ -1,20 +1,14 @@
 //Cursor
 const cursor = document.querySelector(".cursor");
 
+let cursorMove = false;
+
 window.addEventListener("mousemove", (e) => {
     cursor.style.top = `${e.clientY - 10}px`;
     cursor.style.left = `${e.clientX - 15}px`;
-});
-window.addEventListener("mouseover", (e) => {
-    if (e.target.classList.contains("letter")) {
-        e.target.classList.add("skew-y-12");
-    }
-});
-window.addEventListener("mouseout", (e) => {
-    if (e.target.classList.contains("letter")) {
-        setTimeout(() => {
-            e.target.classList.remove("skew-y-12");
-        }, 400);
+    if (!cursorMove) {
+        cursor.classList.remove("hidden");
+        cursorMove = true;
     }
 });
 
@@ -88,7 +82,8 @@ const headingObserver = new IntersectionObserver(
         entries.forEach((e) => {
             if (e.isIntersecting) {
                 e.target.classList.add("show-heading");
-                headingObserver.unobserve(e.target);
+            } else {
+                e.target.classList.remove("show-heading");
             }
         });
     }, {
@@ -108,7 +103,6 @@ const headerDiv = document.querySelector("header");
 const headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
 
 window.onscroll = function(e) {
-
     const currentScrollPos = window.pageYOffset;
     if (menu.classList.contains("show-menu")) {
         return null;
@@ -133,7 +127,8 @@ const serviceObserver = new IntersectionObserver(
         entry.forEach((e) => {
             if (e.isIntersecting) {
                 e.target.classList.add("animate-service");
-                serviceObserver.unobserve(e.target);
+            } else {
+                e.target.classList.remove("animate-service");
             }
         });
     }, {
@@ -151,7 +146,8 @@ const aboutObserver = new IntersectionObserver(
         entry.forEach((e) => {
             if (e.isIntersecting) {
                 e.target.classList.add("show-about");
-                aboutObserver.unobserve(e.target);
+            } else {
+                e.target.classList.remove("show-about");
             }
         });
     }, {
@@ -175,7 +171,8 @@ const galleryObserver = new IntersectionObserver(
         entries.forEach((e) => {
             if (e.isIntersecting) {
                 e.target.classList.add("show-image");
-                galleryObserver.unobserve(e.target);
+            } else {
+                e.target.classList.remove("show-image");
             }
         });
     }, {
@@ -229,7 +226,8 @@ const contactObserver = new IntersectionObserver(
         entries.forEach((e) => {
             if (e.isIntersecting) {
                 e.target.classList.add("show-form");
-                contactObserver.unobserve(e.target);
+            } else {
+                e.target.classList.remove("show-form");
             }
         });
     }, {
@@ -239,8 +237,47 @@ const contactObserver = new IntersectionObserver(
 
 contactObserver.observe(contactForm);
 
+const background = document.querySelector(".background");
+
+const getPos = (pos) => {
+    const newPos = Math.floor(Math.random() * 100);
+    return newPos === pos ? getPos(pos) : newPos;
+};
+
+const getStars = (amount) => {
+    let i = 0;
+    let stars = "";
+
+    let prev = {
+        left: 0,
+        top: 0,
+    };
+
+    for (i; i < amount; i++) {
+        const left = getPos(prev.left);
+        const top = getPos(prev.top);
+        prev.left = left;
+        prev.top = top;
+
+        stars += `<li class="${
+      i % 3 === 0 ? "high-star" : null
+    }" style="animation-delay:${
+      i * 200
+    }ms; top:${top}vh; left:${left}vw;"></li>`;
+    }
+    return stars;
+};
+
+background.innerHTML = getStars(24);
+
 window.addEventListener("DOMContentLoaded", () => {
-    setTimeout(() => {
-        document.querySelector("body").classList.add("loaded");
-    }, 2000);
+    lax.init();
+
+    // Add a driver that we use to control our animations
+
+    lax.addDriver("scrollY", function() {
+        return window.scrollY;
+    });
+
+    document.querySelector("body").classList.add("loaded");
 });
