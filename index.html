@@ -15,11 +15,11 @@
     <title>Artonnie Creations</title>
 </head>
 
-<body class="relative font-main bg-gradient-to-r from-rose-100 to-teal-100">
+<body class="relative font-main overflow-x-hidden">
     <div class="loader bg-black h-screen flex items-center justify-center">
         <div class="load"></div>
     </div>
-    <div class="body hidden overflow-idden">
+    <div class="body hidden overflow-hidden">
         <header class="fixed px-[8%] flex justify-between items-center z-30 backdrop-blur-sm w-full h-20">
             <div>
                 <svg class="h-full w-20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 398.53 405.88" style="enable-background:new 0 0 398.53 405.88;" xml:space="preserve">
@@ -104,31 +104,35 @@
                         </svg>
                     </div>
                 </button>
-                <nav class="fixed menu transition-all rounded-tl-full rounded-bl-full opacity-0 translate-x-full duration-300 top-0 -z-10 -right-0 w-full sm:w-[450px] h-screen bg-white flex items-center justify-center">
+                <nav class="fixed menu top-0 -z-10 -right-0 w-full h-0 overflow-hidden opacity-0 transition-opacity duration-300 bg-white flex items-center justify-center">
                     <ul class="leading-9">
-                        <li class="mr-4 overflow-hidden"><a class="transition-transform duration-500 text-5xl sm:text-6xl inline-block translate-y-[120%]" href="#">Home</a></li>
-                        <li class="mr-4 overflow-hidden"><a class="transition-transform duration-500 text-5xl sm:text-6xl inline-block translate-y-[120%]" href="#bio">Bio</a></li>
-                        <li class="mr-4 overflow-hidden"><a class="transition-transform duration-500 text-5xl sm:text-6xl inline-block translate-y-[120%]" href="#services">Services</a></li>
-                        <li class="mr-4 overflow-hidden"><a class="transition-transform duration-500 text-5xl sm:text-6xl inline-block translate-y-[120%]" href="#gallery">Gallery</a></li>
-                        <li class="mr-4 overflow-hidden"><a class="transition-transform duration-500 text-5xl sm:text-6xl inline-block translate-y-[120%]" href="#contact">Contacts</a></li>
+                        <li class="mr-4 overflow-hidden"><a class="text-5xl border-b border-black w-full font-hero sm:text-6xl inline-block translate-y-[120%]" href="#">Home</a></li>
+                        <li class="mr-4 overflow-hidden"><a class="text-5xl border-b border-black w-full font-hero sm:text-6xl inline-block translate-y-[120%]" href="#bio">Bio</a></li>
+                        <li class="mr-4 overflow-hidden"><a class="text-5xl border-b border-black w-full font-hero sm:text-6xl inline-block translate-y-[120%]" href="#services">Services</a></li>
+                        <li class="mr-4 overflow-hidden"><a class="text-5xl border-b border-black w-full font-hero sm:text-6xl inline-block translate-y-[120%]" href="#gallery">Gallery</a></li>
+                        <li class="mr-4 overflow-hidden"><a class="text-5xl border-b border-black w-full font-hero sm:text-6xl inline-block translate-y-[120%]" href="#contact">Contacts</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-        <div class="fixed top-0 left-0 h-screen w-screen bg-red-200 lax lax_preset_hueRotate:900:359 -z-[40]">
+        <div class="fixed top-0 left-0 h-screen w-screen bg-rose-200 lax lax_preset_hueRotate:1500:359 -z-[40]">
             <ul class="background fixed w-screen h-screen top-0 left-0">
             </ul>
         </div>
-        <div class="cursor hidden fixed bg-[#fd9c8fbb] backdrop-invert border-none h-10 w-10 z-[2000] pointer-events-none rounded-full lax lax_preset_hueRotate:900:359"></div>
+        <div class="cursor lowercase opacity-100 hidenn bg-[#ffffff] text-red-400 animate-spin justify-between items-start relative backdrop-invert border-none h-10 w-10 z-[2000] pointer-events-none rounded-full">
+            <span className="block text-green-600 absolute top-1/2 -translate-y-1/2 left-[36px]">A</span>
+            <span className="block self-end">R</span>
+            <span className="absolute top-1/2 -translate-y-1/2 right-[2px]">T</span>
+        </div>
         <main>
-            <section id="#" class="hero overflow-hidden relative pt-20 min-h-screen flex flex-col justify-center items-center">
+            <section id="#" class="hero overflow-hidden relative pt-20 min-h-screen flex gap-10 sm:gap-7 flex-col justify-center items-center">
                 <h1 class="h-full transition-transfrm dration-150 font-hero text-hero w-full intro text-center overflow-hidden">
                     <p class="h-hero hero-text overflow-hidden flex items-center justify-center">This world is</p>
                     <p class="h-hero hero-text overflow-hidden flex items-center justify-center">but a canvas</p>
                     <p class="h-hero hero-text overflow-hidden flex items-center justify-center">to our</p>
                     <p class="h-hero hero-text overflow-hidden flex items-center justify-center">imagination</p>
                 </h1>
-                <div class="flex flex-wrap gap-4 sm:gap-8 pt-8">
+                <div class="flex flex-wrap gap-4 sm:gap-8">
                     <button class="cta cta-1 translate-y-32 border border-black hover:bg-transparent hover:text-black block text-sm py-3 px-4 bg-black text-white rounded">Get a painting</button>
                     <button class="cta cta-2 translate-y-32 border border-black hover:bg-black hover:text-white block text-sm py-3 px-4 bg-transparent text-black rounded">View our works</button>
                 </div>
@@ -192,8 +196,8 @@
                             <img class="relative z-10 w-full h-full rounded" src="/images/image-6.png" alt="ART PHOTOGRAPH">
                         </div>
                     </div>
-                    <div class="relative img transition-transform duration-300 cursor-pointer hover:shadow-lg hover:transform hover:scale-[0.99] portrait">
-                        <img class="h-full w-full rounded translate-y-48 transition-all opacity-0 duration-500 delay-200" src="../images/img1.jpg" alt="ART PHOTOGRAPH">
+                    <div class="relative img transition-transform duration-300 hover:shadow-lg hover:transform hover:scale-[0.99] portrait">
+                        <img class="h-full w-full rounded" src="../images/img1.jpg" alt="ART PHOTOGRAPH">
                         <button class="zoom-in pl-2 pt-2 rounded-tl bg-white absolute bottom-0 right-0">
                         <svg class="w-8 h-8 pointer-events-none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
                             <g>
@@ -202,8 +206,8 @@
                             </svg>
                     </button>
                     </div>
-                    <div class="relative img transition-transform duration-300 cursor-pointer hover:shadow-lg hover:transform hover:scale-[0.99] painting md:col-span2 sm:row-span-2">
-                        <img class="h-full w-full rounded translate-y-48 transition-all opacity-0 duration-500 delay-200" src="../images/img3.png" alt="ART PHOTOGRAPH">
+                    <div class="relative img transition-transform duration-300 hover:shadow-lg hover:transform hover:scale-[0.99] painting md:col-span2 sm:row-span-2">
+                        <img class="h-full w-full rounded" src="../images/img3.png" alt="ART PHOTOGRAPH">
                         <button class="zoom-in pl-2 pt-2 rounded-tl bg-white absolute bottom-0 right-0">
                         <svg class="w-8 h-8 pointer-events-none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
                             <g>
@@ -212,8 +216,8 @@
                             </svg>
                     </button>
                     </div>
-                    <div class="relative img transition-transform duration-300 cursor-pointer hover:shadow-lg hover:transform hover:scale-[0.99] portrait">
-                        <img class="h-full w-full rounded translate-y-48 transition-all opacity-0 duration-500 delay-200" src="../images/img5.png" alt="ART PHOTOGRAPH">
+                    <div class="relative img transition-transform duration-300 hover:shadow-lg hover:transform hover:scale-[0.99] portrait">
+                        <img class="h-full w-full rounded" src="../images/img5.png" alt="ART PHOTOGRAPH">
                         <button class="zoom-in pl-2 pt-2 rounded-tl bg-white absolute bottom-0 right-0">
                         <svg class="w-8 h-8 pointer-events-none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
                             <g>
@@ -222,8 +226,8 @@
                             </svg>
                     </button>
                     </div>
-                    <div class="relative img transition-transform duration-300 cursor-pointer hover:shadow-lg hover:transform hover:scale-[0.99] painting">
-                        <img class="h-full w-full rounded translate-y-48 transition-all opacity-0 duration-500 delay-200" src="../images/img2.jpg" alt="ART PHOTOGRAPH">
+                    <div class="relative img transition-transform duration-300 hover:shadow-lg hover:transform hover:scale-[0.99] painting">
+                        <img class="h-full w-full rounded" src="../images/img2.jpg" alt="ART PHOTOGRAPH">
                         <button class="zoom-in pl-2 pt-2 rounded-tl bg-white absolute bottom-0 right-0">
                         <svg class="w-8 h-8 pointer-events-none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
                             <g>
@@ -232,8 +236,8 @@
                             </svg>
                     </button>
                     </div>
-                    <div class="relative img transition-transform duration-300 cursor-pointer hover:shadow-lg hover:transform hover:scale-[0.99] painting">
-                        <img class="h-full w-full rounded translate-y-48 transition-all opacity-0 duration-500 delay-200" src="../images/img4.png" alt="ART PHOTOGRAPH">
+                    <div class="relative img transition-transform duration-300 hover:shadow-lg hover:transform hover:scale-[0.99] painting">
+                        <img class="h-full w-full rounded" src="../images/img4.png" alt="ART PHOTOGRAPH">
                         <button class="zoom-in pl-2 pt-2 rounded-tl bg-white absolute bottom-0 right-0">
                         <svg class="w-8 h-8 pointer-events-none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
                             <g>
@@ -242,8 +246,8 @@
                             </svg>
                     </button>
                     </div>
-                    <div class="relative img transition-transform duration-300 cursor-pointer hover:shadow-lg hover:transform hover:scale-[0.99] portrait">
-                        <img class="h-full w-full rounded translate-y-48 transition-all opacity-0 duration-500 delay-200" src="../images/image-6.png" alt="ART PHOTOGRAPH">
+                    <div class="relative img transition-transform duration-300 hover:shadow-lg hover:transform hover:scale-[0.99] portrait">
+                        <img class="h-full w-full rounded" src="../images/image-6.png" alt="ART PHOTOGRAPH">
                         <button class="zoom-in pl-2 pt-2 rounded-tl bg-white absolute bottom-0 right-0">
                         <svg class="w-8 h-8 pointer-events-none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
                             <g>
@@ -252,8 +256,8 @@
                             </svg>
                     </button>
                     </div>
-                    <div class="relative img transition-transform duration-300 cursor-pointer hover:shadow-lg hover:transform hover:scale-[0.99] portrait">
-                        <img class="h-full w-full rounded translate-y-48 transition-all opacity-0 duration-500 delay-200" src="../images/image-7.png" alt="ART PHOTOGRAPH">
+                    <div class="relative img transition-transform duration-300 hover:shadow-lg hover:transform hover:scale-[0.99] portrait">
+                        <img class="h-full w-full rounded" src="../images/image-7.png" alt="ART PHOTOGRAPH">
                         <button class="zoom-in pl-2 pt-2 rounded-tl bg-white absolute bottom-0 right-0">
                         <svg class="w-8 h-8 pointer-events-none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
                             <g>
@@ -262,8 +266,8 @@
                             </svg>
                     </button>
                     </div>
-                    <div class="relative img transition-transform duration-300 cursor-pointer hover:shadow-lg hover:transform hover:scale-[0.99] portrait sm:col-span-2">
-                        <img class="h-full w-full rounded translate-y-48 transition-all opacity-0 duration-500 delay-200" src="../images/img1.jpg" alt="ART PHOTOGRAPH">
+                    <div class="relative img transition-transform duration-300 hover:shadow-lg hover:transform hover:scale-[0.99] portrait sm:col-span-2">
+                        <img class="h-full w-full rounded" src="../images/img1.jpg" alt="ART PHOTOGRAPH">
                         <button class="zoom-in pl-2 pt-2 rounded-tl bg-white absolute bottom-0 right-0">
                         <svg class="w-8 h-8 pointer-events-none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
                             <g>
@@ -272,8 +276,8 @@
                             </svg>
                     </button>
                     </div>
-                    <div class="relative img transition-transform duration-300 cursor-pointer hover:shadow-lg hover:transform hover:scale-[0.99] portrait">
-                        <img class="h-full w-full rounded translate-y-48 transition-all opacity-0 duration-500 delay-200" src="../images/img3.png" alt="ART PHOTOGRAPH">
+                    <div class="relative img transition-transform duration-300 hover:shadow-lg hover:transform hover:scale-[0.99] portrait">
+                        <img class="h-full w-full rounded" src="../images/img3.png" alt="ART PHOTOGRAPH">
                         <button class="zoom-in pl-2 pt-2 rounded-tl bg-white absolute bottom-0 right-0">
                         <svg class="w-8 h-8 pointer-events-none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
                             <g>
@@ -282,8 +286,8 @@
                             </svg>
                     </button>
                     </div>
-                    <div class="relative img transition-transform duration-300 cursor-pointer hover:shadow-lg hover:transform hover:scale-[0.99] portrait">
-                        <img class="h-full w-full rounded translate-y-48 transition-all opacity-0 duration-500 delay-200" src="../images/image-7.png" alt="ART PHOTOGRAPH">
+                    <div class="relative img transition-transform duration-300 hover:shadow-lg hover:transform hover:scale-[0.99] portrait">
+                        <img class="h-full w-full rounded" src="../images/image-7.png" alt="ART PHOTOGRAPH">
                         <button class="zoom-in pl-2 pt-2 rounded-tl bg-white absolute bottom-0 right-0">
                         <svg class="w-8 h-8 pointer-events-none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
                             <g>
@@ -399,7 +403,7 @@
                 </section>
             </section>
         </main>
-        <footer class="bg-black text-white font-light py-8 px-4 flex justify-evenly flex-wrap leading-8">
+        <footer class="py-8 px-4 min-h-[30vh] flex justify-evenly items-center flex-wrap leading-8 relative after:absolute after:bg-black after:top-0 after:left-[10%] after:w-header after:h-[1px]">
             <p class="mr-4">Artonnie Creations</p>
             <p class="mr-4">Copyright &copy; 2022</p>
             <p class="mr-4">Crafted by <a class="underline text-orange-600" href="https://peterngugi.netlify.app" target="_blank">Peter</a></p>

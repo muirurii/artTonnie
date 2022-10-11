@@ -259,7 +259,7 @@ const getStars = (amount) => {
         prev.left = left;
         prev.top = top;
 
-        stars += `<li class="${
+        stars += `<li class="lax lax_preset_hueRotate:100:359 ${
       i % 3 === 0 ? "high-star" : null
     }" style="animation-delay:${
       i * 200
@@ -268,7 +268,7 @@ const getStars = (amount) => {
     return stars;
 };
 
-background.innerHTML = getStars(24);
+background.innerHTML = getStars(18);
 
 window.addEventListener("DOMContentLoaded", () => {
     lax.init();
