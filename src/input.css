@@ -2,12 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
+    body {
+        overflow: overlay;
+    }
     html {
         scroll-behavior: smooth;
-        @apply scroll-pt-20;
+        /* @apply scroll-pt-20; */
     }
-    html::-webkit-scrollbar {
+     ::-webkit-scrollbar {
         width: 8px;
+        @apply bg-transparent;
     }
      ::-webkit-scrollbar-thumb {
         @apply bg-gray-900;
@@ -17,7 +21,7 @@
         @apply bg-gray-300;
     }
      ::-webkit-scrollbar-track {
-        @apply bg-transparent;
+        @apply w-0;
     }
 }
 

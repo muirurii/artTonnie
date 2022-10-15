@@ -104,12 +104,11 @@ const headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
 
 window.onscroll = function(e) {
     const currentScrollPos = window.pageYOffset;
-    if (menu.classList.contains("show-menu")) {
-        return null;
-    } else if (
+    if (
         prevScrollpos > currentScrollPos ||
-        currentScrollPos < headerBottom
+        currentScrollPos < 300
     ) {
+        console.log(currentScrollPos, headerBottom)
         headerDiv.classList.remove("scrolled");
     } else {
         headerDiv.classList.add("scrolled");

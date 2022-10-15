@@ -410,13 +410,18 @@ video {
   height: auto;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+body {
+  overflow: overlay;
 }
 
-html::-webkit-scrollbar {
+html {
+  scroll-behavior: smooth;
+  /* @apply scroll-pt-20; */
+}
+
+::-webkit-scrollbar {
   width: 8px;
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -431,7 +436,7 @@ html::-webkit-scrollbar {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: transparent;
+  width: 0px;
 }
 
 *, ::before, ::after {
@@ -643,7 +648,7 @@ html::-webkit-scrollbar {
   z-index: -10;
 }
 
-.-z-\[40\] {
+.-z-40 {
   z-index: -40;
 }
 
@@ -1016,9 +1021,8 @@ html::-webkit-scrollbar {
   background-color: rgb(254 205 211 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#ffffff\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+.bg-\[\#0000003c\] {
+  background-color: #0000003c;
 }
 
 .bg-transparent {
@@ -1067,8 +1071,8 @@ html::-webkit-scrollbar {
   padding-right: 1.25rem;
 }
 
-.pt-20 {
-  padding-top: 5rem;
+.pt-0 {
+  padding-top: 0px;
 }
 
 .pt-32 {
@@ -1933,10 +1937,6 @@ li.high-star {
   .sm\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
-  }
-
-  .sm\:opacity-100 {
-    opacity: 1;
   }
 }
 
