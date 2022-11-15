@@ -2,11 +2,12 @@
 const cursor = document.querySelector(".cursor");
 
 let cursorMove = false;
+let clickTimeout;
 
 window.addEventListener("mousemove", (e) => {
     cursor.style.top = `${e.clientY - 10}px`;
     cursor.style.left = `${e.clientX - 15}px`;
-    if (!cursorMove) {
+    if (!cursorMove && window.innerWidth > 720) {
         cursor.classList.remove("hidden");
         cursorMove = true;
     }
@@ -14,9 +15,10 @@ window.addEventListener("mousemove", (e) => {
 
 window.addEventListener("click", (e) => {
     cursor.classList.add("clicked");
-    setTimeout(() => {
+    clearTimeout(clickTimeout);
+    clickTimeout = setTimeout(() => {
         cursor.classList.remove("clicked");
-    }, 400);
+    }, 500);
 });
 
 //Menu
@@ -108,7 +110,6 @@ window.onscroll = function(e) {
         prevScrollpos > currentScrollPos ||
         currentScrollPos < 300
     ) {
-        console.log(currentScrollPos, headerBottom)
         headerDiv.classList.remove("scrolled");
     } else {
         headerDiv.classList.add("scrolled");
@@ -170,8 +171,7 @@ const galleryObserver = new IntersectionObserver(
         entries.forEach((e) => {
             if (e.isIntersecting) {
                 e.target.classList.add("show-image");
-            } else {
-                e.target.classList.remove("show-image");
+                galleryObserver.unobserve(e.target);
             }
         });
     }, {
@@ -236,38 +236,59 @@ const contactObserver = new IntersectionObserver(
 
 contactObserver.observe(contactForm);
 
-const background = document.querySelector(".background");
+const footer = document.querySelector("footer");
+const footerTexts = footer.querySelectorAll("p");
 
-const getPos = (pos) => {
-    const newPos = Math.floor(Math.random() * 100);
-    return newPos === pos ? getPos(pos) : newPos;
-};
-
-const getStars = (amount) => {
-    let i = 0;
-    let stars = "";
-
-    let prev = {
-        left: 0,
-        top: 0,
-    };
-
-    for (i; i < amount; i++) {
-        const left = getPos(prev.left);
-        const top = getPos(prev.top);
-        prev.left = left;
-        prev.top = top;
-
-        stars += `<li class="lax lax_preset_hueRotate:100:359 ${
-      i % 3 === 0 ? "high-star" : null
-    }" style="animation-delay:${
-      i * 200
-    }ms; top:${top}vh; left:${left}vw;"></li>`;
+const footerObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((e) => {
+            if (e.isIntersecting) {
+                e.target.classList.add("show-text");
+            } else {
+                e.target.classList.remove("show-text");
+            }
+        });
+    }, {
+        threshold: 0.7,
     }
-    return stars;
-};
+);
 
-background.innerHTML = getStars(18);
+footerTexts.forEach(t => footerObserver.observe(t));
+
+footerObserver.observe(footer);
+
+// const background = document.querySelector(".background");
+
+// const getPos = (pos) => {
+//     const newPos = Math.floor(Math.random() * 100);
+//     return newPos === pos ? getPos(pos) : newPos;
+// };
+
+// const getStars = (amount) => {
+//     let i = 0;
+//     let stars = "";
+
+//     let prev = {
+//         left: 0,
+//         top: 0,
+//     };
+
+//     for (i; i < amount; i++) {
+//         const left = getPos(prev.left);
+//         const top = getPos(prev.top);
+//         prev.left = left;
+//         prev.top = top;
+
+//         stars += `<li class=" ${
+//       i % 3 === 0 ? "high-star" : null
+//     }" style="animation-delay:${
+//       i * 200
+//     }ms; top:${top}vh; left:${left}vw;"></li>`;
+//     }
+//     return stars;
+// };
+
+// background.innerHTML = getStars(2);
 
 window.addEventListener("DOMContentLoaded", () => {
     lax.init();
