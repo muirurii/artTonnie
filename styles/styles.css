@@ -700,6 +700,14 @@ html {
   margin-left: 0.5rem;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
 .block {
   display: block;
 }
@@ -776,6 +784,18 @@ html {
 
 .h-6 {
   height: 1.5rem;
+}
+
+.h-\[200vh\] {
+  height: 200vh;
+}
+
+.h-\[101vh\] {
+  height: 101vh;
+}
+
+.h-\[100vh\] {
+  height: 100vh;
 }
 
 .max-h-\[180px\] {
@@ -1008,9 +1028,9 @@ html {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-rose-200 {
+.bg-teal-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(254 205 211 / var(--tw-bg-opacity));
+  background-color: rgb(153 246 228 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#0000003c\] {
@@ -1025,9 +1045,9 @@ html {
   background-color: #ffffffb4;
 }
 
-.bg-teal-200 {
+.bg-red-400 {
   --tw-bg-opacity: 1;
-  background-color: rgb(153 246 228 / var(--tw-bg-opacity));
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
 
 .fill-black {
@@ -1583,7 +1603,7 @@ body {
 }
 
 .form.show-form button, 
-    p.show-text {
+    footer.show-text p {
   transform: none;
   opacity: 1;
 }

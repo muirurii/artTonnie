@@ -219,7 +219,7 @@
         @apply w-full;
     }
     .form.show-form button,
-    p.show-text {
+    footer.show-text p {
         @apply transform-none;
         @apply opacity-100;
     }

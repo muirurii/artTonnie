@@ -41,6 +41,26 @@ menu.querySelectorAll("a").forEach((item, index) => {
     item.addEventListener("click", toggleMenu);
 });
 
+//Custom observer
+
+const customObserver = (elements, toggleClass, isInfinite, threshold) => {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                entry.isIntersecting ?
+                    entry.target.classList.add(toggleClass) :
+                    entry.target.classList.remove(toggleClass);
+
+                !isInfinite && entry.isIntersecting && observer.unobserve(entry.target);
+            });
+        }, {
+            threshold,
+        }
+    );
+
+    elements.forEach((entry) => observer.observe(entry));
+};
+
 //Hero
 
 const toContact = document.querySelector(".cta-1");
@@ -79,24 +99,8 @@ heroTexts.forEach((line) => {
 
 const headings = document.querySelectorAll(".heading");
 
-const headingObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((e) => {
-            if (e.isIntersecting) {
-                e.target.classList.add("show-heading");
-            } else {
-                e.target.classList.remove("show-heading");
-            }
-        });
-    }, {
-        threshold: 1,
-    }
-);
-
-headings.forEach((h) => {
-    h.innerHTML = generateSpans(h.textContent);
-    headingObserver.observe(h);
-});
+customObserver(headings, "show-heading", true, 0.5);
+headings.forEach((h) => (h.innerHTML = generateSpans(h.textContent)));
 
 // Hide header on scroll down
 
@@ -106,10 +110,7 @@ const headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
 
 window.onscroll = function(e) {
     const currentScrollPos = window.pageYOffset;
-    if (
-        prevScrollpos > currentScrollPos ||
-        currentScrollPos < 300
-    ) {
+    if (prevScrollpos > currentScrollPos || currentScrollPos < 300) {
         headerDiv.classList.remove("scrolled");
     } else {
         headerDiv.classList.add("scrolled");
@@ -121,41 +122,11 @@ window.onscroll = function(e) {
 //Services
 
 const serviceCards = document.querySelectorAll(".s-card");
-
-const serviceObserver = new IntersectionObserver(
-    (entry) => {
-        entry.forEach((e) => {
-            if (e.isIntersecting) {
-                e.target.classList.add("animate-service");
-            } else {
-                e.target.classList.remove("animate-service");
-            }
-        });
-    }, {
-        threshold: 0.8,
-    }
-);
-
-serviceCards.forEach((card) => serviceObserver.observe(card));
+customObserver(serviceCards, "animate-service", true, 0.8);
 
 //About
-const bio = document.querySelector("#bio");
-
-const aboutObserver = new IntersectionObserver(
-    (entry) => {
-        entry.forEach((e) => {
-            if (e.isIntersecting) {
-                e.target.classList.add("show-about");
-            } else {
-                e.target.classList.remove("show-about");
-            }
-        });
-    }, {
-        threshold: 0.5,
-    }
-);
-
-aboutObserver.observe(bio);
+const bio = document.querySelectorAll("#bio");
+customObserver(bio, "show-about", true, 0.5);
 
 //Gallery
 
@@ -166,20 +137,7 @@ const zoomOut = imgView.querySelector(".zoom-out");
 const categories = document.querySelectorAll(".category");
 const images = gallery.querySelectorAll(".img");
 
-const galleryObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((e) => {
-            if (e.isIntersecting) {
-                e.target.classList.add("show-image");
-                galleryObserver.unobserve(e.target);
-            }
-        });
-    }, {
-        threshold: 0.4,
-    }
-);
-
-images.forEach((image) => galleryObserver.observe(image));
+customObserver(images, "show-image", false, 0.4);
 
 gallery.addEventListener("click", (e) => {
     if (!e.target.classList.contains("zoom-in")) return;
@@ -219,81 +177,17 @@ categories.forEach((button) => {
 
 //Contact
 const contactForm = document.querySelector(".form");
-
-const contactObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((e) => {
-            if (e.isIntersecting) {
-                e.target.classList.add("show-form");
-            } else {
-                e.target.classList.remove("show-form");
-            }
-        });
-    }, {
-        threshold: 0.7,
-    }
-);
-
-contactObserver.observe(contactForm);
+customObserver([contactForm], "show-form", true, 0.7);
 
 const footer = document.querySelector("footer");
 const footerTexts = footer.querySelectorAll("p");
 
-const footerObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((e) => {
-            if (e.isIntersecting) {
-                e.target.classList.add("show-text");
-            } else {
-                e.target.classList.remove("show-text");
-            }
-        });
-    }, {
-        threshold: 0.7,
-    }
-);
-
-footerTexts.forEach(t => footerObserver.observe(t));
-
-footerObserver.observe(footer);
-
-// const background = document.querySelector(".background");
-
-// const getPos = (pos) => {
-//     const newPos = Math.floor(Math.random() * 100);
-//     return newPos === pos ? getPos(pos) : newPos;
-// };
-
-// const getStars = (amount) => {
-//     let i = 0;
-//     let stars = "";
-
-//     let prev = {
-//         left: 0,
-//         top: 0,
-//     };
-
-//     for (i; i < amount; i++) {
-//         const left = getPos(prev.left);
-//         const top = getPos(prev.top);
-//         prev.left = left;
-//         prev.top = top;
-
-//         stars += `<li class=" ${
-//       i % 3 === 0 ? "high-star" : null
-//     }" style="animation-delay:${
-//       i * 200
-//     }ms; top:${top}vh; left:${left}vw;"></li>`;
-//     }
-//     return stars;
-// };
-
-// background.innerHTML = getStars(2);
+customObserver([footer], "show-text", true, 0.5);
 
 window.addEventListener("DOMContentLoaded", () => {
     lax.init();
 
-    // Add a driver that we use to control our animations
+    // Add a driver that to control animations
 
     lax.addDriver("scrollY", function() {
         return window.scrollY;
