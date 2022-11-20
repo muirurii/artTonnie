@@ -140,14 +140,58 @@ const images = gallery.querySelectorAll(".img");
 customObserver(images, "show-image", false, 0.4);
 
 gallery.addEventListener("click", (e) => {
-    if (!e.target.classList.contains("zoom-in")) return;
-    const selected = e.target.previousElementSibling.src;
-    activeImage.src = selected;
-    imgView.classList.add("show-big-img");
+    if (e.target.classList.contains("zoom-in")) {
+        const selected = e.target.previousElementSibling.src;
+        activeImage.src = selected;
+        imgView.classList.add("show-big-img");
+    }
+    if (e.target.classList.contains("retry")) {
+        const imageEl = e.target.parentElement.nextElementSibling;
+        imageEl.src = `${imageEl.src}?t=${Date.now()}`;
+    }
 });
 
 zoomOut.addEventListener("click", () => {
     imgView.classList.remove("show-big-img");
+});
+
+const handleOnError = (e) => {
+    e.preventDefault();
+    if (
+        e.target.previousElementSibling &&
+        e.target.previousElementSibling.classList.contains("bg-gray-100")
+    )
+        return;
+    const el = document.createElement("div");
+    el.className = `${Array.from(e.target.classList).join(
+    " "
+  )} bg-gray-100 flex flex-col items-center justify-center gap-y-2`;
+    el.innerHTML = `
+    <p class="text-xs">Error loading image</p>
+    <button class="bg-black text-white text-xs py-2 px-4 rounded-full text-xs retry">Retry</button>
+    `;
+    e.target.parentElement.insertBefore(el, e.target);
+    e.target.classList.add("hidden");
+    e.target.setAttribute("data-error", "true");
+    const hasQuery = e.target.src.indexOf("?");
+    console.log(e.target, hasQuery);
+    e.target.src = `${e.target.src}? t=${Date.now()}`;
+};
+
+const handleOnReload = (e) => {
+    if (e.target.getAttribute("data-error")) {
+        e.target.removeAttribute("data-error");
+        e.target.classList.remove("hidden");
+        e.target.previousElementSibling.classList.add("hidden");
+    } else {
+        e.target.removeEventListener("error", handleOnError);
+        e.target.removeEventListener("load", handleOnReload);
+    }
+};
+console.log(document.querySelectorAll("img"));
+document.querySelectorAll("img").forEach((i) => {
+    i.addEventListener("error", handleOnError);
+    i.addEventListener("load", handleOnReload);
 });
 
 categories.forEach((button) => {
@@ -185,13 +229,13 @@ const footerTexts = footer.querySelectorAll("p");
 customObserver([footer], "show-text", true, 0.5);
 
 window.addEventListener("DOMContentLoaded", () => {
-    lax.init();
+    // lax.init();
 
-    // Add a driver that to control animations
+    // // Add a driver that to control animations
 
-    lax.addDriver("scrollY", function() {
-        return window.scrollY;
-    });
+    // lax.addDriver("scrollY", function() {
+    //     return window.scrollY;
+    // });
 
     document.querySelector("body").classList.add("loaded");
 });
