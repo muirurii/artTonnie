@@ -4,14 +4,18 @@ const cursor = document.querySelector(".cursor");
 let cursorMove = false;
 let clickTimeout;
 
-window.addEventListener("mousemove", (e) => {
+const handleMouseMove = (e) => {
     cursor.style.top = `${e.clientY - 10}px`;
     cursor.style.left = `${e.clientX - 15}px`;
-    if (!cursorMove && window.innerWidth > 720) {
+    if (window.innerWidth < 769)
+        return window.removeEventListener("mousemove", handleMouseMove);
+    if (!cursorMove) {
         cursor.classList.remove("hidden");
         cursorMove = true;
     }
-});
+};
+
+window.addEventListener("mousemove", handleMouseMove);
 
 window.addEventListener("click", (e) => {
     cursor.classList.add("clicked");
@@ -139,7 +143,7 @@ const images = gallery.querySelectorAll(".img");
 
 customObserver(images, "show-image", false, 0.4);
 
-gallery.addEventListener("click", (e) => {
+window.addEventListener("click", (e) => {
     if (e.target.classList.contains("zoom-in")) {
         const selected = e.target.previousElementSibling.src;
         activeImage.src = selected;
@@ -147,6 +151,7 @@ gallery.addEventListener("click", (e) => {
     }
     if (e.target.classList.contains("retry")) {
         const imageEl = e.target.parentElement.nextElementSibling;
+        // /imageEl.src = "./images/img3.png"
         imageEl.src = `${imageEl.src}?t=${Date.now()}`;
     }
 });
@@ -156,26 +161,26 @@ zoomOut.addEventListener("click", () => {
 });
 
 const handleOnError = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     if (
         e.target.previousElementSibling &&
-        e.target.previousElementSibling.classList.contains("bg-gray-100")
+        e.target.previousElementSibling.classList.contains("cover")
     )
         return;
     const el = document.createElement("div");
     el.className = `${Array.from(e.target.classList).join(
     " "
-  )} bg-gray-100 flex flex-col items-center justify-center gap-y-2`;
+  )} bg-gray-100 flex flex-col items-center justify-center gap-y-2 cover`;
     el.innerHTML = `
-    <p class="text-xs">Error loading image</p>
+    <p class="text-xs text-center">Error loading ${e.target.alt.toLowerCase()}</p>
     <button class="bg-black text-white text-xs py-2 px-4 rounded-full text-xs retry">Retry</button>
     `;
     e.target.parentElement.insertBefore(el, e.target);
     e.target.classList.add("hidden");
     e.target.setAttribute("data-error", "true");
-    const hasQuery = e.target.src.indexOf("?");
-    console.log(e.target, hasQuery);
-    e.target.src = `${e.target.src}? t=${Date.now()}`;
+    e.target.src = `${e.target.src}?t=${Math.floor(
+    Math.random() * 405 * Math.random()
+  )}`;
 };
 
 const handleOnReload = (e) => {
@@ -188,7 +193,7 @@ const handleOnReload = (e) => {
         e.target.removeEventListener("load", handleOnReload);
     }
 };
-console.log(document.querySelectorAll("img"));
+
 document.querySelectorAll("img").forEach((i) => {
     i.addEventListener("error", handleOnError);
     i.addEventListener("load", handleOnReload);
@@ -229,13 +234,13 @@ const footerTexts = footer.querySelectorAll("p");
 customObserver([footer], "show-text", true, 0.5);
 
 window.addEventListener("DOMContentLoaded", () => {
-    // lax.init();
+    lax.init();
 
-    // // Add a driver that to control animations
+    // Add a driver that to control animations
 
-    // lax.addDriver("scrollY", function() {
-    //     return window.scrollY;
-    // });
+    lax.addDriver("scrollY", function() {
+        return window.scrollY;
+    });
 
     document.querySelector("body").classList.add("loaded");
 });

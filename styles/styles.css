@@ -416,7 +416,7 @@ body {
 
 html {
   scroll-behavior: smooth;
-  /* @apply scroll-pt-20; */
+  scroll-padding-top: 2.5rem;
 }
 
 ::-webkit-scrollbar {
@@ -700,14 +700,6 @@ html {
   margin-left: 0.5rem;
 }
 
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
-.mb-1 {
-  margin-bottom: 0.25rem;
-}
-
 .block {
   display: block;
 }
@@ -784,18 +776,6 @@ html {
 
 .h-6 {
   height: 1.5rem;
-}
-
-.h-\[200vh\] {
-  height: 200vh;
-}
-
-.h-\[101vh\] {
-  height: 101vh;
-}
-
-.h-\[100vh\] {
-  height: 100vh;
 }
 
 .max-h-\[180px\] {
@@ -912,23 +892,6 @@ html {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-@-webkit-keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin {
-  -webkit-animation: spin 1s linear infinite;
-          animation: spin 1s linear infinite;
-}
-
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -971,6 +934,10 @@ html {
 
 .gap-9 {
   gap: 2.25rem;
+}
+
+.gap-y-2 {
+  row-gap: 0.5rem;
 }
 
 .overflow-hidden {
@@ -1045,9 +1012,14 @@ html {
   background-color: #ffffffb4;
 }
 
-.bg-red-400 {
+.bg-gray-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#00003c\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 60 / var(--tw-bg-opacity));
 }
 
 .fill-black {
@@ -1157,6 +1129,11 @@ html {
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .font-bold {
@@ -1467,6 +1444,12 @@ body {
 
 .background path {
   display: block;
+}
+
+@-webkit-keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
