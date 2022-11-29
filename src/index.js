@@ -126,7 +126,7 @@ window.onscroll = function(e) {
 //Services
 
 const serviceCards = document.querySelectorAll(".s-card");
-customObserver(serviceCards, "animate-service", true, 0.8);
+customObserver(serviceCards, "animate-service", true, 0.3);
 
 //About
 const bio = document.querySelectorAll("#bio");
