@@ -7,7 +7,7 @@ let clickTimeout;
 const handleMouseMove = (e) => {
     cursor.style.top = `${e.clientY - 10}px`;
     cursor.style.left = `${e.clientX - 15}px`;
-    if (window.innerWidth < 769)
+    if (window.innerWidth < 769 && !cursorMove)
         return window.removeEventListener("mousemove", handleMouseMove);
     if (!cursorMove) {
         cursor.classList.remove("hidden");
@@ -30,12 +30,14 @@ window.addEventListener("click", (e) => {
 const menuBtn = document.querySelector(".menu-btn");
 const menu = document.querySelector(".menu");
 let menuClick;
+let menuIsOpen = false;
 
 const toggleMenu = () => {
     clearTimeout(menuClick);
     menuClick = setTimeout(() => {
         menuBtn.classList.toggle("open-menu");
         menu.classList.toggle("show-menu");
+        menuIsOpen = !menuIsOpen;
     }, 300);
 };
 
@@ -111,22 +113,27 @@ headings.forEach((h) => (h.innerHTML = generateSpans(h.textContent)));
 let prevScrollpos = window.pageYOffset;
 const headerDiv = document.querySelector("header");
 const headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
+let scrollTimeout;
 
-window.onscroll = function(e) {
-    const currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos || currentScrollPos < 300) {
-        headerDiv.classList.remove("scrolled");
-    } else {
-        headerDiv.classList.add("scrolled");
-    }
-
-    prevScrollpos = currentScrollPos;
+const handleOnScroll = (e) => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+        const currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos || currentScrollPos < 300 || menuIsOpen) {
+            headerDiv.classList.remove("scrolled");
+        } else {
+            headerDiv.classList.add("scrolled");
+        }
+        prevScrollpos = currentScrollPos;
+    }, 100);
 };
+
+window.addEventListener("scroll", handleOnScroll);
 
 //Services
 
 const serviceCards = document.querySelectorAll(".s-card");
-customObserver(serviceCards, "animate-service", true, 0.3);
+customObserver(serviceCards, "animate-service", true, 0.4);
 
 //About
 const bio = document.querySelectorAll("#bio");
