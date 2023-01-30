@@ -11,6 +11,7 @@
     }
      ::-webkit-scrollbar {
         width: 8px;
+        height: 8px;
         @apply bg-transparent;
     }
      ::-webkit-scrollbar-thumb {
@@ -26,35 +27,21 @@
 }
 
 @layer utilities {
-    .st0 {
-        @apply fill-black;
-    }
-    .st1 {
-        @apply fill-white;
-    }
     .st2 {
         fill-rule: evenodd;
         clip-rule: evenodd;
         @apply fill-white;
     }
-    /* @media (pointer: fine) { */
-    body {
-        /* @apply cursor-none; */
-    }
     .cursor {
         animation-duration: 2000ms;
-        /* @apply flex; */
-        /* animation-direction: alternate-reverse */
     }
     .clicked {
         @apply opacity-20;
-        /* @apply animate-ping; */
         @apply border-4;
         @apply border-gray-900;
         transform: scale(1.7);
         @apply bg-gray-600;
     }
-    /* } */
     .loaded .body {
         @apply block;
     }
@@ -151,7 +138,7 @@
         }
     }
     .background::before {
-        background: conic-gradient(at center top, #db000098, #ff6600bd, #db000098);
+        background: radial-gradient(at center bottom, rgba(255, 230, 86, 0.356), rgba(253, 223, 71, 0.575));
     }
     .background {
         background-color: #ffa6001a;
@@ -188,41 +175,15 @@
     .animate-service .service-foot::before {
         @apply transform-none;
     }
-    .active-cat {
-        @apply bg-black;
-        @apply text-white;
+    .carousel-cell {
+        height: 300px;
+        margin-right: 10px;
+        border-radius: 5px;
+        counter-increment: gallery-cell;
     }
-    .img img {
-        clip-path: polygon(50% 0, 50% 100%, 50% 50%);
-    }
-    .show-image img {
-        transform-origin: right;
-        animation: clip 500ms ease-in-out forwards;
-    }
-    @keyframes clip {
-        0% {
-            clip-path: polygon(44% 100%, 0% 100%, 100% 100%);
-        }
-        25% {
-            clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 0 100%, 50% 50%);
-        }
-        50% {
-            clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0 100%, 50% 50%);
-        }
-        75% {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 50% 50%);
-        }
-        100% {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 50%);
-        }
-    }
-    .show-big-img {
-        @apply h-screen;
-        @apply top-0;
-    }
-    .show-big-img .zoom-out {
-        @apply block;
-        animation: text 400ms 600ms forwards;
+    .fade-img img {
+        transform: unset;
+        opacity: 1;
     }
     .form.show-form input,
     .form.show-form textarea {
