@@ -138,7 +138,7 @@
         }
     }
     .background::before {
-        background: radial-gradient(at center bottom, rgba(255, 230, 86, 0.356), rgba(253, 223, 71, 0.575));
+        background: radial-gradient(at center bottom, rgba(255, 162, 86, 0.356), rgba(253, 71, 71, 0.726));
     }
     .background {
         background-color: #ffa6001a;
@@ -184,6 +184,12 @@
     .fade-img img {
         transform: unset;
         opacity: 1;
+    }
+    .image-viewer {
+        background-color: #ffffff9f;
+    }
+    .image-viewer:not(.translate-x-full) .zoom-out {
+        @apply transform-none;
     }
     .form.show-form input,
     .form.show-form textarea {

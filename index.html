@@ -182,9 +182,9 @@
                         ">
                             <h2 class="text-lg w-fit">Painting</h2>
                             <p class="pt-4 font-light">
-                                Paintings are a form of visual art that captures the expression of ideas and emotions on a two-dimensional surface. Artists use the elements of shape, colors, line, tones, and textures in unique ways to produce paintings that convey sensations of movement,
-                                volume, space, and light – traditionally on a flat surface. Paintings are a form of visual art that captures the expression of ideas and emotions on a two-dimensional surface. Artists use the elements of shape, colors,
-                                line, tones, and textures in unique ways to produce paintings that convey sensations of movement, volume, space, and light – traditionally on a flat surface.
+                                As an artist, painting is a passion that allows me to express my creativity and bring my thoughts and emotions to life on canvas. With every stroke of the brush, I aim to capture the essence of my subject matter, be it a still life, portrait, or landscape,
+                                and bring it to life in a way that truly showcases its beauty. Painting for me is not just about the application of color, it’s about the story I am telling, the emotions I am evoking, and the memories I am creating. Whether
+                                it’s the warm, golden light of a summer day, the cool, blue hues of a winter landscape, or the vibrant, bold colors of a cityscape, each painting has its own unique story to tell.
                             </p>
                         </arricle>
                     </section>
@@ -234,59 +234,103 @@
                             </p>
                         </arricle>
                     </section>
-                    <section class="s-card flex gap-4 flex-col sm:flex-row sm:justify-evenly opacity-0 -translate-x-4 transition-all duration-300
-                    ">
-                        <article class="service-head sm:order-2 h-[280px] w-full sm:w-[500px] transition-all duration-[500ms] delay-[300ms]
-                        ">
-                            <img src="https://images.pexels.com/photos/7898603/pexels-photo-7898603.jpeg?auto=compress&cs=tinysrgb&w=600" alt="fff" class="
-                            w-full scale-0 transition-transform duration-500 delay-[400ms]
-                            h-full rounded">
-                        </article>
-                        <arricle class="service-foot w-full sm:max-w-[500px]
-                        relative after:absolute after:top-0 after:left-0 after:bottom-0 after:right-1/2
-                        after:transition-all after:duration-500 after:delay-[500ms]
-                        after:border-l after:border-t after:border-transparent
-                        after:rounded-tl p-2 rounded
-                        before:absolute before:-left-1 before:top-[28px] before:w-2 before:h-2 before:bg-black
-                        before:rounded before:scale-0 before:transition-all before:duration-500 before:delay-[800ms]
-                        ">
-                            <h2 class="text-lg w-fit">Painting</h2>
-                            <p class="pt-4 font-light">
-                                Paintings are a form of visual art that captures the expression of ideas and emotions on a two-dimensional surface. Artists use the elements of shape, colors, line, tones, and textures in unique ways to produce paintings that convey sensations of movement,
-                                volume, space, and light – traditionally on a flat surface.
-                            </p>
-                        </arricle>
-                    </section>
                 </section>
             </section>
             <section id="gallery" class="relative pt-32 pb-8 overflow-hidden">
                 <h1 class="font-hero text-5xl absolute top-10 left-4 heading overflow-hidden h-12">RECENT WORKS</h1>
+                <section class="image-viewer fixed top-0 left-0 w-screen h-screen
+                flex items-center justify-center flex-col gap-y-4
+                z-50 transition-all duration-500 translate-x-full">
+                    <button class="zoom-out -z-10 transition-transform translate-y-32 duration-500 delay-500">
+                    <svg class="w-8 h-8 pointer-events-none" x="0px" y="0px" viewBox="0 0 252 252" style="enable-background:new 0 0 252 252;" xml:space="preserve">
+                        <g>
+                            <path d="M126,0C56.523,0,0,56.523,0,126s56.523,126,126,126s126-56.523,126-126S195.477,0,126,0z M126,234   c-59.551,0-108-48.449-108-108S66.449,18,126,18s108,48.449,108,108S185.551,234,126,234z"></path>
+                            <path d="M164.612,87.388c-3.515-3.515-9.213-3.515-12.728,0L126,113.272l-25.885-25.885c-3.515-3.515-9.213-3.515-12.728,0   c-3.515,3.515-3.515,9.213,0,12.728L113.272,126l-25.885,25.885c-3.515,3.515-3.515,9.213,0,12.728   c1.757,1.757,4.061,2.636,6.364,2.636s4.606-0.879,6.364-2.636L126,138.728l25.885,25.885c1.757,1.757,4.061,2.636,6.364,2.636   s4.606-0.879,6.364-2.636c3.515-3.515,3.515-9.213,0-12.728L138.728,126l25.885-25.885   C168.127,96.601,168.127,90.902,164.612,87.388z"></path>
+                        </g>
+                        <g></g>
+                    </svg>
+                </button>
+                    <img class="w-screen h-[70%] sm:w-[500px] sm:h-[450px] rounded object-fill" src="./images/image-7.png" alt="">
+                </section>
                 <section class="carousel works" data-flickity='{
                 "autoPlay": true,
-                "freeScroll": true,
                 "wrapAround":true,
                 "contain": true,
                 "prevNextButtons": true,
                 "pageDots": false,
                "dragThreshold": 50
             }'>
-                    <section class="carousel-cell w-[95%] max-w-[500px] sm:w-[45%]">
+                    <section class="carousel-cell w-[95%] max-w-[500px] sm:w-[45%] relative">
                         <img src="./images/img1.jpg" alt="PHOTOGRAPH" class="w-full h-full object-fill translate-y-0 scale-y-90 transition-all opacity-20 duration-300 rounded">
+                        <button class="zoom-in pl-2 pt-2 rounded-tl bg-white absolute bottom-0 right-0">
+                            <svg class="w-8 h-8 pointer-events-none" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
+                                <g>
+                                    <path d="M288.717,245.006L210.493,166.7c-5.26,8.885-11.666,17.17-19.152,24.663c-7.497,7.507-15.788,13.93-24.68,19.2   l78.214,78.302c5.239,5.246,12.225,8.135,19.668,8.135c7.444,0,14.43-2.889,19.67-8.135l4.505-4.512   C299.554,273.506,299.552,255.854,288.717,245.006z"></path>
+                                    <path d="M176.76,30.332C156.562,10.11,130.088,0,103.612,0C77.136,0,50.66,10.11,30.457,30.332   c-40.4,40.45-40.403,106.027,0,146.47c20.203,20.225,46.679,30.339,73.154,30.339c26.477,0,52.95-10.113,73.148-30.339   C217.166,136.359,217.166,70.78,176.76,30.332z M145.014,113.851l-31.103,0.018l-0.016,31.113   c-0.003,5.689-4.615,10.298-10.304,10.298c-0.002,0-0.003,0-0.005,0c-5.689-0.003-10.302-4.618-10.298-10.308l0.015-31.092   l-31.088,0.018c-0.002,0-0.004,0-0.006,0c-5.688,0-10.301-4.608-10.304-10.297c-0.003-5.691,4.607-10.307,10.298-10.31   l31.109-0.019l0.016-31.108c0.003-5.689,4.615-10.299,10.304-10.299c0.002,0,0.003,0,0.005,0   c5.689,0.003,10.301,4.618,10.298,10.309l-0.015,31.088l31.08-0.019c0.003,0,0.005,0,0.007,0c5.688,0,10.3,4.608,10.303,10.298   C155.315,109.231,150.703,113.848,145.014,113.851z"></path>
+                                </g>
+                                <g></g>
+                            </svg>
+                        </button>
                     </section>
-                    <section class="carousel-cell w-[95%] max-w-[500px] sm:w-[45%]">
+                    <section class="carousel-cell w-[95%] max-w-[500px] sm:w-[45%] relative">
                         <img src="./images/img2.jpg" alt="PHOTOGRAPH" class="w-full h-full object-fill translate-y-0 scale-y-90 transition-all opacity-20 duration-300 rounded">
+                        <button class="zoom-in pl-2 pt-2 rounded-tl bg-white absolute bottom-0 right-0">
+                            <svg class="w-8 h-8 pointer-events-none" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
+                                <g>
+                                    <path d="M288.717,245.006L210.493,166.7c-5.26,8.885-11.666,17.17-19.152,24.663c-7.497,7.507-15.788,13.93-24.68,19.2   l78.214,78.302c5.239,5.246,12.225,8.135,19.668,8.135c7.444,0,14.43-2.889,19.67-8.135l4.505-4.512   C299.554,273.506,299.552,255.854,288.717,245.006z"></path>
+                                    <path d="M176.76,30.332C156.562,10.11,130.088,0,103.612,0C77.136,0,50.66,10.11,30.457,30.332   c-40.4,40.45-40.403,106.027,0,146.47c20.203,20.225,46.679,30.339,73.154,30.339c26.477,0,52.95-10.113,73.148-30.339   C217.166,136.359,217.166,70.78,176.76,30.332z M145.014,113.851l-31.103,0.018l-0.016,31.113   c-0.003,5.689-4.615,10.298-10.304,10.298c-0.002,0-0.003,0-0.005,0c-5.689-0.003-10.302-4.618-10.298-10.308l0.015-31.092   l-31.088,0.018c-0.002,0-0.004,0-0.006,0c-5.688,0-10.301-4.608-10.304-10.297c-0.003-5.691,4.607-10.307,10.298-10.31   l31.109-0.019l0.016-31.108c0.003-5.689,4.615-10.299,10.304-10.299c0.002,0,0.003,0,0.005,0   c5.689,0.003,10.301,4.618,10.298,10.309l-0.015,31.088l31.08-0.019c0.003,0,0.005,0,0.007,0c5.688,0,10.3,4.608,10.303,10.298   C155.315,109.231,150.703,113.848,145.014,113.851z"></path>
+                                </g>
+                                <g></g>
+                            </svg>
+                        </button>
                     </section>
-                    <section class="carousel-cell w-[95%] max-w-[500px] sm:w-[45%]">
+                    <section class="carousel-cell w-[95%] max-w-[500px] sm:w-[45%] relative">
                         <img src="./images/img3.png" alt="PHOTOGRAPH" class="w-full h-full object-fill translate-y-0 scale-y-90 transition-all opacity-20 duration-300 rounded">
+                        <button class="zoom-in pl-2 pt-2 rounded-tl bg-white absolute bottom-0 right-0">
+                            <svg class="w-8 h-8 pointer-events-none" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
+                                <g>
+                                    <path d="M288.717,245.006L210.493,166.7c-5.26,8.885-11.666,17.17-19.152,24.663c-7.497,7.507-15.788,13.93-24.68,19.2   l78.214,78.302c5.239,5.246,12.225,8.135,19.668,8.135c7.444,0,14.43-2.889,19.67-8.135l4.505-4.512   C299.554,273.506,299.552,255.854,288.717,245.006z"></path>
+                                    <path d="M176.76,30.332C156.562,10.11,130.088,0,103.612,0C77.136,0,50.66,10.11,30.457,30.332   c-40.4,40.45-40.403,106.027,0,146.47c20.203,20.225,46.679,30.339,73.154,30.339c26.477,0,52.95-10.113,73.148-30.339   C217.166,136.359,217.166,70.78,176.76,30.332z M145.014,113.851l-31.103,0.018l-0.016,31.113   c-0.003,5.689-4.615,10.298-10.304,10.298c-0.002,0-0.003,0-0.005,0c-5.689-0.003-10.302-4.618-10.298-10.308l0.015-31.092   l-31.088,0.018c-0.002,0-0.004,0-0.006,0c-5.688,0-10.301-4.608-10.304-10.297c-0.003-5.691,4.607-10.307,10.298-10.31   l31.109-0.019l0.016-31.108c0.003-5.689,4.615-10.299,10.304-10.299c0.002,0,0.003,0,0.005,0   c5.689,0.003,10.301,4.618,10.298,10.309l-0.015,31.088l31.08-0.019c0.003,0,0.005,0,0.007,0c5.688,0,10.3,4.608,10.303,10.298   C155.315,109.231,150.703,113.848,145.014,113.851z"></path>
+                                </g>
+                                <g></g>
+                            </svg>
+                        </button>
                     </section>
-                    <section class="carousel-cell w-[95%] max-w-[500px] sm:w-[45%]">
+                    <section class="carousel-cell w-[95%] max-w-[500px] sm:w-[45%] relative">
                         <img src="./images/img4.png" alt="PHOTOGRAPH" class="w-full h-full object-fill translate-y-0 scale-y-90 transition-all opacity-20 duration-300 rounded">
+                        <button class="zoom-in pl-2 pt-2 rounded-tl bg-white absolute bottom-0 right-0">
+                            <svg class="w-8 h-8 pointer-events-none" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
+                                <g>
+                                    <path d="M288.717,245.006L210.493,166.7c-5.26,8.885-11.666,17.17-19.152,24.663c-7.497,7.507-15.788,13.93-24.68,19.2   l78.214,78.302c5.239,5.246,12.225,8.135,19.668,8.135c7.444,0,14.43-2.889,19.67-8.135l4.505-4.512   C299.554,273.506,299.552,255.854,288.717,245.006z"></path>
+                                    <path d="M176.76,30.332C156.562,10.11,130.088,0,103.612,0C77.136,0,50.66,10.11,30.457,30.332   c-40.4,40.45-40.403,106.027,0,146.47c20.203,20.225,46.679,30.339,73.154,30.339c26.477,0,52.95-10.113,73.148-30.339   C217.166,136.359,217.166,70.78,176.76,30.332z M145.014,113.851l-31.103,0.018l-0.016,31.113   c-0.003,5.689-4.615,10.298-10.304,10.298c-0.002,0-0.003,0-0.005,0c-5.689-0.003-10.302-4.618-10.298-10.308l0.015-31.092   l-31.088,0.018c-0.002,0-0.004,0-0.006,0c-5.688,0-10.301-4.608-10.304-10.297c-0.003-5.691,4.607-10.307,10.298-10.31   l31.109-0.019l0.016-31.108c0.003-5.689,4.615-10.299,10.304-10.299c0.002,0,0.003,0,0.005,0   c5.689,0.003,10.301,4.618,10.298,10.309l-0.015,31.088l31.08-0.019c0.003,0,0.005,0,0.007,0c5.688,0,10.3,4.608,10.303,10.298   C155.315,109.231,150.703,113.848,145.014,113.851z"></path>
+                                </g>
+                                <g></g>
+                            </svg>
+                        </button>
                     </section>
-                    <section class="carousel-cell w-[95%] max-w-[500px] sm:w-[45%]">
+                    <section class="carousel-cell w-[95%] max-w-[500px] sm:w-[45%] relative">
                         <img src="./images/img5.png" alt="PHOTOGRAPH" class="w-full h-full object-fill translate-y-0 scale-y-90 transition-all opacity-20 duration-300 rounded">
+                        <button class="zoom-in pl-2 pt-2 rounded-tl bg-white absolute bottom-0 right-0">
+                            <svg class="w-8 h-8 pointer-events-none" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
+                                <g>
+                                    <path d="M288.717,245.006L210.493,166.7c-5.26,8.885-11.666,17.17-19.152,24.663c-7.497,7.507-15.788,13.93-24.68,19.2   l78.214,78.302c5.239,5.246,12.225,8.135,19.668,8.135c7.444,0,14.43-2.889,19.67-8.135l4.505-4.512   C299.554,273.506,299.552,255.854,288.717,245.006z"></path>
+                                    <path d="M176.76,30.332C156.562,10.11,130.088,0,103.612,0C77.136,0,50.66,10.11,30.457,30.332   c-40.4,40.45-40.403,106.027,0,146.47c20.203,20.225,46.679,30.339,73.154,30.339c26.477,0,52.95-10.113,73.148-30.339   C217.166,136.359,217.166,70.78,176.76,30.332z M145.014,113.851l-31.103,0.018l-0.016,31.113   c-0.003,5.689-4.615,10.298-10.304,10.298c-0.002,0-0.003,0-0.005,0c-5.689-0.003-10.302-4.618-10.298-10.308l0.015-31.092   l-31.088,0.018c-0.002,0-0.004,0-0.006,0c-5.688,0-10.301-4.608-10.304-10.297c-0.003-5.691,4.607-10.307,10.298-10.31   l31.109-0.019l0.016-31.108c0.003-5.689,4.615-10.299,10.304-10.299c0.002,0,0.003,0,0.005,0   c5.689,0.003,10.301,4.618,10.298,10.309l-0.015,31.088l31.08-0.019c0.003,0,0.005,0,0.007,0c5.688,0,10.3,4.608,10.303,10.298   C155.315,109.231,150.703,113.848,145.014,113.851z"></path>
+                                </g>
+                                <g></g>
+                            </svg>
+                        </button>
                     </section>
-                    <section class="carousel-cell w-[95%] max-w-[500px] sm:w-[45%]">
+                    <section class="carousel-cell w-[95%] max-w-[500px] sm:w-[45%] relative">
                         <img src="./images/image-6.png" alt="PHOTOGRAPH" class="w-full h-full object-fill translate-y-0 scale-y-90 transition-all opacity-20 duration-300 rounded">
+                        <button class="zoom-in pl-2 pt-2 rounded-tl bg-white absolute bottom-0 right-0">
+                            <svg class="w-8 h-8 pointer-events-none" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
+                                <g>
+                                    <path d="M288.717,245.006L210.493,166.7c-5.26,8.885-11.666,17.17-19.152,24.663c-7.497,7.507-15.788,13.93-24.68,19.2   l78.214,78.302c5.239,5.246,12.225,8.135,19.668,8.135c7.444,0,14.43-2.889,19.67-8.135l4.505-4.512   C299.554,273.506,299.552,255.854,288.717,245.006z"></path>
+                                    <path d="M176.76,30.332C156.562,10.11,130.088,0,103.612,0C77.136,0,50.66,10.11,30.457,30.332   c-40.4,40.45-40.403,106.027,0,146.47c20.203,20.225,46.679,30.339,73.154,30.339c26.477,0,52.95-10.113,73.148-30.339   C217.166,136.359,217.166,70.78,176.76,30.332z M145.014,113.851l-31.103,0.018l-0.016,31.113   c-0.003,5.689-4.615,10.298-10.304,10.298c-0.002,0-0.003,0-0.005,0c-5.689-0.003-10.302-4.618-10.298-10.308l0.015-31.092   l-31.088,0.018c-0.002,0-0.004,0-0.006,0c-5.688,0-10.301-4.608-10.304-10.297c-0.003-5.691,4.607-10.307,10.298-10.31   l31.109-0.019l0.016-31.108c0.003-5.689,4.615-10.299,10.304-10.299c0.002,0,0.003,0,0.005,0   c5.689,0.003,10.301,4.618,10.298,10.309l-0.015,31.088l31.08-0.019c0.003,0,0.005,0,0.007,0c5.688,0,10.3,4.608,10.303,10.298   C155.315,109.231,150.703,113.848,145.014,113.851z"></path>
+                                </g>
+                                <g></g>
+                            </svg>
+                        </button>
                     </section>
                 </section>
             </section>

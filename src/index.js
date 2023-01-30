@@ -119,7 +119,11 @@ const handleOnScroll = (e) => {
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
         const currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos || currentScrollPos < 300 || menuIsOpen) {
+        if (
+            prevScrollpos > currentScrollPos ||
+            currentScrollPos < 300 ||
+            menuIsOpen
+        ) {
             headerDiv.classList.remove("scrolled");
         } else {
             headerDiv.classList.add("scrolled");
@@ -230,6 +234,25 @@ customObserver(bio, "show-about", true, 0.5);
 //         });
 //     });
 // });
+
+const imageViewer = document.querySelector(".image-viewer");
+const imageElement = imageViewer.querySelector("img");
+const zoomOut = imageViewer.querySelector(".zoom-out");
+const carousel = document.querySelector(".carousel");
+
+const handleZoomIn = (e) => {
+    if (!e.target.classList.contains("zoom-in")) return;
+    const activeImage = e.target.previousElementSibling.src;
+    imageElement.src = activeImage;
+    imageViewer.classList.remove("translate-x-full");
+};
+
+const handleZoomOut = (e) => {
+    imageViewer.classList.add("translate-x-full");
+};
+
+carousel.addEventListener("click", handleZoomIn);
+zoomOut.addEventListener("click", handleZoomOut);
 
 const imageCards = document.querySelectorAll(".carousel-cell");
 
