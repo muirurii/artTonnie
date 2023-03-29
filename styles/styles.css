@@ -697,6 +697,10 @@ html {
   display: flex;
 }
 
+.table {
+  display: table;
+}
+
 .hidden {
   display: none;
 }
@@ -1444,7 +1448,8 @@ html {
   counter-increment: gallery-cell;
 }
 
-.fade-img img {
+.fade-img img,
+    .fade-img button {
   transform: unset;
   opacity: 1;
 }

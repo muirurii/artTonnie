@@ -181,7 +181,8 @@
         border-radius: 5px;
         counter-increment: gallery-cell;
     }
-    .fade-img img {
+    .fade-img img,
+    .fade-img button {
         transform: unset;
         opacity: 1;
     }
