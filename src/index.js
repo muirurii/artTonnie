@@ -245,10 +245,19 @@ const handleZoomIn = (e) => {
     const activeImage = e.target.previousElementSibling.src;
     imageElement.src = activeImage;
     imageViewer.classList.remove("translate-x-full");
+    imageViewer.classList.remove("opacity-0");
 };
 
+let imageViewTimer;
+
 const handleZoomOut = (e) => {
-    imageViewer.classList.add("translate-x-full");
+    imageViewer.classList.add("-translate-x-full");
+    clearTimeout(imageViewTimer);
+    imageViewTimer = setTimeout(() => {
+        imageViewer.classList.add("opacity-0");
+        imageViewer.classList.remove("-translate-x-full");
+        imageViewer.classList.add("translate-x-full");
+    }, 500)
 };
 
 carousel.addEventListener("click", handleZoomIn);
